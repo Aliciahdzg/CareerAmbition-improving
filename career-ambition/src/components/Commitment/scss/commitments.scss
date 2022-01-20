@@ -1,0 +1,49 @@
+$color-grey: #F2F2F2;
+$color-darkblue: #03588C;
+$color-lightblue: #035AA6;
+$color-green: #5EBFA4;
+
+.table-commitments{
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table-commitments thead{
+    background-color: $color-darkblue;
+    color: $color-grey;
+}
+
+.table-commitments tbody{
+    background-color: $color-grey;
+}
+
+.table-commitments tr {
+    border: 1px solid $color-darkblue;
+}
+
+.table-commitments td {
+    border: 1px solid $color-darkblue;
+}
+
+.table-commitments td input {
+    width: 98%;
+    height: 98%;
+}
+
+.table-btns {
+    width:10%;
+}
+
+.h1-commitments{
+    color: $color-darkblue;
+    margin-bottom: 20px;
+}
+
+.title-commitments{
+    color:$color-grey;
+    text-align: center;
+    background-color: $color-green;
+    width: fit-content;
+    padding: 2px 10px;
+}

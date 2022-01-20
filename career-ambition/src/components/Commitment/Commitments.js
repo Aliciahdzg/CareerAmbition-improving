@@ -1,12 +1,22 @@
 import React, {useState} from 'react';
+import './scss/commitments.scss'
+import ActionPlan from './ActionPlan'
 
 export default function Commitments() {
-    let [renglon, setRenglon]=useState([])
+    let [info, setInfo]=useState({
+        period: '',
+        areasOfFocus:[],
+        actionPlan:[],
+        plannedPractices:[],
+        accountability:[],
+        deliberatePractice:[]
+    })
+
     let [smartGoal, setSmartGoal] = useState('')
     let [dateSmartGoal, setDateSmartGoal] = useState('')
 
-    const addRows= (goal, date) => {
-        setRenglon([...renglon, {smartGoal: goal, dateGoal: date}])
+    const addRowsSmartGoal= (goal, date) => {
+        setInfo({...info, actionPlan:[...info.actionPlan, {smartGoal: goal, dateGoal: date}]})
         setSmartGoal('')
         setDateSmartGoal('')
     }
@@ -19,33 +29,24 @@ export default function Commitments() {
         setDateSmartGoal(date)
     }
 
+    const deleteRow = (keyname, section) => {
+        let id = keyname.substring(10)
+        let newArr = []
+        for (let i=0; i< info[section].length;i++){
+            if (Number(id) !== i){
+                newArr.push(info[section][i])
+            }
+        }
+        setInfo({...info, [section]:newArr})
+        //console.log(id)
+        //console.log(info)
+        //console.log(info[section])
+    }
+    
     return (
         <div>
-            <table >
-                <thead>
-                    <tr>
-                        <th>SMART Goal</th>
-                        <th>By When</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {renglon.length !== 0 ? (renglon.map((elem)=> 
-                        <tr>
-                            <td>{elem.smartGoal}</td>
-                            <td>{elem.dateGoal}</td>
-                            <td><button type='button'>x</button></td>
-                        </tr>
-                    )): null}
-                    <tr>
-                        <td><input type='text' onChange={(e) => handleSmartGoal(e.target.value)} value={smartGoal}/></td>
-                        <td><input type='date' onChange={(e) => handleDateSmartGoal(e.target.value)} value={dateSmartGoal}/></td>
-                        <td><button type='button' onClick={()=>{addRows(smartGoal,dateSmartGoal)}}>+</button></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            
+            <h1 className='h1-commitments'>Period {info.period}</h1>
+            <ActionPlan info={info} smartGoal={smartGoal} dateSmartGoal={dateSmartGoal} addRowsSmartGoal={addRowsSmartGoal} handleSmartGoal={handleSmartGoal} handleDateSmartGoal={handleDateSmartGoal} deleteRow={deleteRow}/>
         </div>
     )
 }
