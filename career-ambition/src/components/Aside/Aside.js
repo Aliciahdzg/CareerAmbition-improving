@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import './aside.scss'
 import { Icon } from '@iconify/react';
 
@@ -18,6 +17,3 @@ const Aside = () => {
 }
 
 export default Aside;
-=======
-
->>>>>>> Stashed changes

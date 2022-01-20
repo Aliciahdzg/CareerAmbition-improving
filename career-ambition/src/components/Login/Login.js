@@ -38,7 +38,7 @@ export default function Login() {
 
 
     return(
-        <div>
+        <div className="bodyLogin">
             <div>
                 <img src="https://i.ibb.co/7k4WzpX/improving-logo-color.png" alt="logo" />
             </div>
