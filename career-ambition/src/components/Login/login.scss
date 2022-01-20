@@ -1,15 +1,85 @@
-body{
-    background-image: url(https://i.ibb.co/6rwd2bW/background.png) ;
-    background-color: #cccccc;
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Open+Sans:wght@300;400;600;700&display=swap");
+//font-family: 'Merriweather', serif;
+//font-family: 'Open Sans', sans-serif;
+
+body {
+  background-image: url(https://i.ibb.co/6rwd2bW/background.png);
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
-.formLogin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-btn {
+  position: relative;
+  padding: 1.2em 2.25em;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 2.45em;
+  border: none;
+}
+
+.login-btn span {
+  position: relative;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+ letter-spacing: 0.3em;
+  z-index: 1;
+}
+
+.login-btn .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.login-btn .liquid::after,
+.login-btn .liquid::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #fff;
+}
+
+.login-btn .liquid::before {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+}
+
+.login-btn .liquid::after {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 10s linear infinite;
+}
+
+.login-btn:hover .liquid {
+  top: -120px;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
 }

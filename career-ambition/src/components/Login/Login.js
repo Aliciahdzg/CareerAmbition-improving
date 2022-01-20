@@ -28,7 +28,6 @@ export default function Login() {
           .then(() => {
             //navigate("dashboard");
             console.log("ya entre")
-            // ...
           })
           .catch(() => {
             setError('Contraseña y/o correo inválidos, vuelve a intentar');
@@ -44,19 +43,22 @@ export default function Login() {
                 <img src="https://i.ibb.co/7k4WzpX/improving-logo-color.png" alt="logo" />
             </div>
             <div className="formLogin">
-                <form>
-                    <h3>Login</h3>
-                    <p>Name:</p>
-                    <input type="text" />
-                <p>Email:</p>
+                <form >
+                  <h3>Login</h3>
+                
+                    <p> &#9993;Email:</p>
                     <input type="text" onChange={(e) => { setEmail(e.target.value) }} />
-                <p>Password:</p>
+                    <p>	&#128477; Password:</p>
                     <input type="password" onChange={(e) => { setPass(e.target.value) }}/>
-                <p><button onClick={() => { handleLogin(email, pass) }}>Get in</button> </p>
-                <div>
-                {error && <p className="error" >{error}</p>}
-                </div>
+
+                    <button className="login-btn" onClick={() => { handleLogin(email, pass) }}>
+                     <span>Get in</span>
+                     <div className="liquid"></div>
+                    </button> 
                 </form>
+            </div>
+            <div>
+                {error && <p className="error" >{error}</p>}
             </div>
         </div>
         

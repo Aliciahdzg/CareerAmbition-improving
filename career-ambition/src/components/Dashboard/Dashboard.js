@@ -38,5 +38,48 @@ const Dashboard = () => {
         </div>
     )
 }
+//import React, { useState } from 'react';
+//import { signOff, auth } from "../../firebase/firebase-config";
+//import Swal from "sweetalert2";
+//import { useNavigate } from "react-router";
 
-export default Dashboard
+
+//const Dashboard = () => {
+//  const [setError] = useState("");
+//  const navigate = useNavigate();
+
+//  const handleSignOut = () => {
+//    try {
+//      Swal.fire({
+//        title: "¿Desea Cerrar sesión?",
+//        icon: "question",
+//        showCancelButton: true,
+//        confirmButtonColor: "#c93c00",
+//        cancelButtonColor: "#e7aa2b",
+//        confirmButtonText: "Si",
+//        cancelButtonText: "No",
+//        width: "50vh",
+//        heightAuto: "true",
+//        position: "center",
+//      }).then((result) => {
+//        if (result.isConfirmed) {
+//          signOff(auth);
+//          navigate("/");
+//        }
+//      });
+//    } catch (error) {
+//      setError("Error del servidor");
+//      console.log(error);
+//    }
+//  };
+
+
+//  return (
+//    <div>
+//      <h1>estoy en dashboard</h1>
+//      <button onClick={() => { handleSignOut(auth) }}>Cerrar Sesión</button>
+//    </div>
+//  );
+//};
+
+export default Dashboard;
