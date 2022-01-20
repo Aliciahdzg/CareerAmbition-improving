@@ -44,9 +44,9 @@ export default function Login() {
                 <img src="https://i.ibb.co/7k4WzpX/improving-logo-color.png" alt="logo" />
             </div>
             <div className="formLogin">
-                <form >
-                <h3>Login</h3>
-                <p>Name:</p>
+                <form>
+                    <h3>Login</h3>
+                    <p>Name:</p>
                     <input type="text" />
                 <p>Email:</p>
                     <input type="text" onChange={(e) => { setEmail(e.target.value) }} />
@@ -59,6 +59,6 @@ export default function Login() {
                 </form>
             </div>
         </div>
-
+        
     )
 }

@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.aside{
+    position: absolute;
+    width: 169px;
+    left: 0px;
+    top: 0px;
+    background: #434546;
+    height: 100%;
+}
+.logout{
+    display: flex;
+    margin-bottom: 30em;
+    flex-direction: column;
+    justify-content: end;
+}
+.carbon{
+    display: flex;
+    margin-top:1em ;
+    flex-direction: column;
+    align-items: center;
+    size: 10em;
+}
+.avatar{
+    margin: 5px;
+    color: white;
+    width: 2em; 
+}
