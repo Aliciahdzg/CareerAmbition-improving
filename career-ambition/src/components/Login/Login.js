@@ -26,12 +26,12 @@ export default function Login() {
 
         signInWithEmailAndPassword(auth, email, password)
           .then(() => {
-            //navigate("dashboard");
+            navigate("dashboard");
             console.log("ya entre")
           })
           .catch(() => {
             setError('Contraseña y/o correo inválidos, vuelve a intentar');
-            setTimeout(() => setError(''), 2500);
+            setTimeout(() => setError(''), 3000);
     
           });
       };
@@ -40,16 +40,17 @@ export default function Login() {
     return(
         <div className="bodyLogin">
             <div>
-                <img src="https://i.ibb.co/7k4WzpX/improving-logo-color.png" alt="logo" />
+                <img className="logo-img" src="https://i.ibb.co/7k4WzpX/improving-logo-color.png" alt="logo" />
             </div>
             <div className="formLogin">
-                <form >
-                  <h3>Login</h3>
-                
-                    <p> &#9993;Email:</p>
-                    <input type="text" onChange={(e) => { setEmail(e.target.value) }} />
+            <h3 className="title-login">Login</h3>
+                <form className="p-form">
+                  
+                    <p > &#9993;Email:</p>
+                    <input className="input-login" type="text" pattern=".+@improving\.com" size="30" onChange={(e) => { setEmail(e.target.value) }} />
                     <p>	&#128477; Password:</p>
-                    <input type="password" onChange={(e) => { setPass(e.target.value) }}/>
+                    <input className="input-login" type="password" size="6" pattern="[0-9]{6}"
+          required onChange={(e) => { setPass(e.target.value) }}/>
 
                     <button className="login-btn" onClick={() => { handleLogin(email, pass) }}>
                      <span>Get in</span>
@@ -57,9 +58,9 @@ export default function Login() {
                     </button> 
                 </form>
             </div>
-            <div>
-                {error && <p className="error" >{error}</p>}
-            </div>
+            
+                {error && <h5 className="error" >{error}</h5>}
+            
         </div>
         
     )

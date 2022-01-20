@@ -12,13 +12,66 @@
   background-size: cover;
   position: relative;
 }
+.logo-img {
+  width: 80vmin;
+}
 .formLogin {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60vmin;
+  height: 60vmin;
+  background: rgba(246, 250, 253, 0.27);
+  border: 0.2em solid #4397d2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  font-family: "Open Sans", sans-serif;
 }
+.title-login {
+  color: #03588c;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 4vh;
+  font-style: normal;
+  font-weight: normal;
+}
+.p-form {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3vmax;
+  line-height: 33px;
+  text-align: center;
+  color: #696969;
+}
+.input-login {
+  border: none;
+  border-bottom: 0.09em solid #4397d2;
+  background: rgba(246, 250, 253, 0);
+  width: 18vmax;
+  font-size: 1.3vmax;
+  color: rgb(54, 54, 54);
+  background-color: none;
+  outline: none;
+  padding-left: 1vmax;
+}
+
+.input-login:invalid {
+  color: #696969;
+}
+.input-login:valid {
+  color: #289475;
+}
+
 .login-btn {
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5vmax;
   position: relative;
   padding: 1.2em 2.25em;
   display: block;
@@ -42,8 +95,8 @@
   left: 0;
   width: 100%;
   height: 200px;
-  background: #4973ff;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  background: #03588c;
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.637);
   transition: 0.5s;
 }
 
@@ -61,13 +114,13 @@
 
 .login-btn .liquid::before {
   border-radius: 45%;
-  background: rgba(20, 20, 20, 1);
+  background: rgba(255, 255, 255, 0.377);
   animation: animate 5s linear infinite;
 }
 
 .login-btn .liquid::after {
   border-radius: 40%;
-  background: rgba(20, 20, 20, 0.5);
+  background: #4396d2b4;
   animation: animate 10s linear infinite;
 }
 
@@ -83,4 +136,10 @@
   100% {
     transform: translate(-50%, -75%) rotate(360deg);
   }
+}
+
+.error {
+  color: rgba(255, 0, 0, 0.795);
+  text-align: center;
+  margin-top: 1vmax;
 }
