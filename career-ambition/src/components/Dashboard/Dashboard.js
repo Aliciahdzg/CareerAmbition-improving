@@ -27,6 +27,7 @@ const Dashboard = () => {
 
     return (
         <div>
+            <Aside />
             <div className='personal-information'>
               {users.map((user) => (<>
                  <h2 key={user.id }>{user.name}</h2>
@@ -34,6 +35,7 @@ const Dashboard = () => {
                  </>)
               )}
             </div>
+            
             
         </div>
     )

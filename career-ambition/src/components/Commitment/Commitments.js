@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './scss/commitments.scss'
 import ActionPlan from './ActionPlan'
+import Aside from '../Aside/Aside';
 
 export default function Commitments() {
     let [info, setInfo]=useState({
@@ -47,6 +48,7 @@ export default function Commitments() {
         <div>
             <h1 className='h1-commitments'>Period {info.period}</h1>
             <ActionPlan info={info} smartGoal={smartGoal} dateSmartGoal={dateSmartGoal} addRowsSmartGoal={addRowsSmartGoal} handleSmartGoal={handleSmartGoal} handleDateSmartGoal={handleDateSmartGoal} deleteRow={deleteRow}/>
+            <Aside />
         </div>
     )
 }
