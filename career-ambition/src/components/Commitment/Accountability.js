@@ -18,9 +18,9 @@ export default function Accountability({info, mentor, when, via, deleteRow, hand
                         let keyName = 'row-mentor-' + index
                         let keyBtnMentor = 'btn-mentor-' + index
                         return (<tr key={keyName}>
-                            <td>{elem.mentor}</td>
-                            <td>{elem.when}</td>
-                            <td>{elem.via}</td>
+                            <td>{elem.person}</td>
+                            <td>{elem.frecuency}</td>
+                            <td>{elem.vía}</td>
                             <td ><button className='btn-delete' type='button' key={keyBtnMentor} onClick={()=> deleteRow(keyBtnMentor, 'accountability')}>Delete</button></td>
                         </tr>)}
                     )): null}

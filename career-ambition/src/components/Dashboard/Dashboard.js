@@ -4,7 +4,6 @@ import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../../firebase/firebase-config';
 
 import Aside from '../Aside/Aside';
-import MainGoals from '../Dashboard/MainGoals';
 
 import './dashboard.scss';
 
@@ -42,7 +41,6 @@ const Dashboard = () => {
                           Career Abition text
                        </div>
                     </div>
-                    <MainGoals />
                   </div>)
               )}
            

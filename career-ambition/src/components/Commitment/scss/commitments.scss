@@ -52,7 +52,6 @@ $color-green: #5EBFA4;
 
 .h1-commitments{
     color: $color-darkblue;
-    margin-bottom: 20px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -139,4 +138,34 @@ $color-green: #5EBFA4;
 .btn-save:active, .btn-add:active, .btn-delete:active {
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
     transform: translateY(2px);
+}
+
+.div-period{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+    margin:20px 0px;
+}
+
+.period-select{
+    height: fit-content;
+    font-size: 30px;
+    color:$color-darkblue;
+    margin:0px 20px;
+}
+
+.div-inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.div-inputs input{
+    width: 100%;
+}
+
+.label-commitments {
+    width: 30%;
 }

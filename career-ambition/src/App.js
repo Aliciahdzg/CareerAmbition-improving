@@ -13,10 +13,13 @@ import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn]= useState(false)
+  const [userName, setUserName] =useState('')
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        setUserName(auth.currentUser.email)
+        console.log(auth.currentUser.email)
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
@@ -31,7 +34,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="dashboard" element={<Dashboard />} />
-        <Route exact path="commitment" element={<Commitments />} />
+        <Route exact path="commitment" element={<Commitments userName={userName}/>} />
         <Route exact path="calendar" element={<Calendar />} />
       </Routes>
     </BrowserRouter>

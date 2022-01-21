@@ -18,9 +18,9 @@ export default function DeliberatePractice({info, practice, date, outcomes, dele
                         let keyName = 'row-practice-' + index
                         let keyBtnPractice = 'btn-practice-' + index
                         return (<tr key={keyName}>
-                            <td>{elem.practice}</td>
+                            <td>{elem.action}</td>
                             <td>{elem.date}</td>
-                            <td>{elem.outcome}</td>
+                            <td>{elem.outcomes}</td>
                             <td ><button className='btn-delete' type='button' key={keyBtnPractice} onClick={()=> deleteRow(keyBtnPractice, 'deliberatePractice')}>X</button></td>
                         </tr>)}
                     )): null}
