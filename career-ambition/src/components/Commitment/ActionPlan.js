@@ -1,13 +1,15 @@
+import './scss/actionPlan.scss'
+
 export default function ActionPlan({info, smartGoal, dateSmartGoal, deleteRow, handleSmartGoal, handleDateSmartGoal, addRowsSmartGoal}) {
     return (
-        <div>
+        <div className="actionPlan">
             <div className="title-commitments">Action Plan</div>
             <table className="table-commitments">
                 <thead>
                     <tr>
-                        <th>SMART Goal</th>
-                        <th>By When</th>
-                        <th></th>
+                        <th className='table-smartGoal'>SMART Goal</th>
+                        <th className='table-byWhen'>By When</th>
+                        <th className='table-btns'></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,13 +19,13 @@ export default function ActionPlan({info, smartGoal, dateSmartGoal, deleteRow, h
                         return (<tr key={keyName}>
                             <td>{elem.smartGoal}</td>
                             <td>{elem.dateGoal}</td>
-                            <td class='table-btns'><button type='button' key={keyBtnSmart} onClick={()=> deleteRow(keyBtnSmart, 'actionPlan')}>Delete</button></td>
+                            <td ><button className='btn-delete' type='button' key={keyBtnSmart} onClick={()=> deleteRow(keyBtnSmart, 'actionPlan')}>Delete</button></td>
                         </tr>)}
                     )): null}
                     <tr>
                         <td><input type='text' onChange={(e) => handleSmartGoal(e.target.value)} value={smartGoal}/></td>
                         <td><input type='date' onChange={(e) => handleDateSmartGoal(e.target.value)} value={dateSmartGoal}/></td>
-                        <td><button type='button' onClick={()=>{addRowsSmartGoal(smartGoal,dateSmartGoal)}}>Add</button></td>
+                        <td><button className='btn-add' type='button' onClick={()=>{addRowsSmartGoal(smartGoal,dateSmartGoal)}}>Add</button></td>
                     </tr>
                 </tbody>
             </table>
