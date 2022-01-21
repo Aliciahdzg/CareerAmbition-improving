@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 $color-grey: #F2F2F2;
 $color-darkblue: #03588C;
 $color-lightblue: #035AA6;
 $color-green: #5EBFA4;
 
 .table-commitments{
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .table-commitments thead{
@@ -27,23 +29,114 @@ $color-green: #5EBFA4;
 }
 
 .table-commitments td input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    text-decoration: none;
+    border:none;
+    text-align: center;
+}
+
+.table-commitments td select {
     width: 98%;
     height: 98%;
+    outline: none;
+    text-decoration: none;
+    border:none;
 }
 
 .table-btns {
     width:10%;
+    
 }
 
 .h1-commitments{
     color: $color-darkblue;
     margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .title-commitments{
-    color:$color-grey;
+    color:black;
     text-align: center;
-    background-color: $color-green;
+    background-color: transparent;
     width: fit-content;
     padding: 2px 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.aside{
+    height: 100vh;
+}
+.body-commitments{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 14%;
+}
+.container-commitments{
+    width: 70%;
+    font-family: 'Open Sans', sans-serif;
+    margin:10px auto;
+}
+
+.div-btn-save{
+    width: 100%;
+    margin:0;
+    text-align: center;
+}
+
+.btn-save{
+    background-color: $color-darkblue;
+    color: $color-grey;
+    border-radius: 20px;
+    padding: 5px 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    border:none;
+    margin: 10px auto;
+}
+
+.btn-save:hover{
+    box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-add{
+    background-color: $color-green;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    border:none;
+    margin:5px 0px;
+}
+
+.btn-add:hover{
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-delete{
+    color:rgb(110, 3, 3);
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    border:1px solid rgb(110, 3, 3);
+    background-color: transparent;
+    margin:5px 0px;
+}
+
+.btn-delete:hover{
+    color:$color-grey;
+    background-color: rgba(110, 3, 3, 0.486);
+}
+
+.btn-save:active, .btn-add:active, .btn-delete:active {
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(2px);
 }
