@@ -19,7 +19,7 @@ export default function Login() {
             console.log("ya entre")
           })
           .catch(() => {
-            setError('Contraseña y/o correo inválidos, vuelve a intentar');
+            setError('Invalid email or password, please try again.');
             setTimeout(() => setError(''), 3000);
     
           });

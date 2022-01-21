@@ -18,6 +18,12 @@ p{
     height: 100%;
     font-size: 4em;
     flex-direction: column;
+    border-right-style: solid;
+    border-right-color: #5EBFA4;
+    box-shadow: 0px 20px blue;
+}
+.userAvatar{
+    display: flex;
 }
 
 .icons{
@@ -28,13 +34,21 @@ p{
     color: white;
     margin: 5px;
 }
+
 .logout, .calendar, .edit{
     margin-top: 20px;
+  
+}
+.divHover:hover, .logout:hover{
+    color: #5EBFA4;
 }
 .avatar{
     margin-bottom: 40px;
     font-size: 1.5em;
 
+}
+.divHover{
+    text-align: center;
 }
 .logout{
     display: flex;

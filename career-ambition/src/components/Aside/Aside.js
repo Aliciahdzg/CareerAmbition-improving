@@ -13,14 +13,14 @@ const Aside = () => {
   const handleSignOut = () => {
     try {
       Swal.fire({
-        title: "¿Desea Cerrar sesión?",
+        title: "Do you want to log out?",
         icon: "question",
         showCancelButton: true,
-        confirmButtonColor: "#c93c00",
-        cancelButtonColor: "#e7aa2b",
-        confirmButtonText: "Si",
+        confirmButtonColor: "#5EBFA4",
+        cancelButtonColor: "#4397D2",
+        confirmButtonText: "Yes",
         cancelButtonText: "No",
-        width: "50vh",
+        width: "45vh",
         heightAuto: "true",
         position: "center",
       }).then((result) => {
@@ -30,7 +30,7 @@ const Aside = () => {
         }
       });
     } catch (error) {
-      setError("Error del servidor");
+      setError("Error server");
       console.log(error);
     }
   };
@@ -48,16 +48,25 @@ const Aside = () => {
         <div>
                 <aside className="aside">
                     <div className="icons">
+                        <div className="userAvatar">
                     <Icon icon="carbon:user-avatar" className="avatar" />
+                    {/* <Icon icon="akar-icons:circle-plus-fill" color="#5ebfa4" width="30" height="30" /> */}
+                    </div>
+                    <div className="divHover">
                     <Icon icon="ic:outline-dashboard-customize" className="dashboard"
                     onClick={dashboard}/>
                     <p>Dashboard</p>
+                    </div>
+                    <div className="divHover">
                     <Icon icon="bx:bxs-calendar" className="calendar"
                     onClick={calendar}/>
                     <p>Calendar</p>
+                    </div>
+                    <div className="divHover">
                     <Icon icon="bi:list-check" className="edit"
                     onClick={editionView} />
                     <p>Commitments</p>
+                    </div>
                     </div>
                     <div className="logout">
                     <Icon icon="fe:logout"  onClick={() => { handleSignOut(auth) }}/>

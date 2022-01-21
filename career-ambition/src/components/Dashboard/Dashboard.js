@@ -42,7 +42,7 @@ const Dashboard = () => {
                           Career Abition text
                        </div>
                     </div>
-                    <MainGoals />
+                   
                   </div>)
               )}
            
