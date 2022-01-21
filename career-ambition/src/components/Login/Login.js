@@ -10,16 +10,6 @@ export default function Login() {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-   
-    //useEffect(() => {
-    //    onAuthStateChanged(auth, (user) => {
-    //      if (user) {
-    //        navigate("dashboard");
-    //      } else {
-    //        navigate("/");
-    //      }
-    //    });
-    //  }, []);
 
     const handleLogin = (email, password) => {
 
