@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react'
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../../firebase/firebase-config';
 
-import Aside from '../Aside/Aside'
+import Aside from '../Aside/Aside';
+import MainGoals from '../Dashboard/MainGoals';
+
+import './dashboard.scss';
 
 const Dashboard = () => {
    const [users, setUsers] = useState([]);
@@ -28,60 +31,25 @@ const Dashboard = () => {
     return (
         <div>
             <Aside />
-            <div className='personal-information'>
-              {users.map((user) => (<>
-                 <h2 key={user.id }>{user.name}</h2>
-                 <p key={user.id}>{user.email}</p>
-                 </>)
+            
+              {users.map((user) => (
+                  <div className='personal-information'key={user.id }>
+                    <h3>{user.name}</h3>
+                     <p>{user.email}</p>
+                    <div className='career-ambition'>
+                       <h2>Career Ambition</h2>
+                       <div>
+                          Career Abition text
+                       </div>
+                    </div>
+                    <MainGoals />
+                  </div>)
               )}
-            </div>
+           
             
             
         </div>
     )
 }
-//import React, { useState } from 'react';
-//import { signOff, auth } from "../../firebase/firebase-config";
-//import Swal from "sweetalert2";
-//import { useNavigate } from "react-router";
-
-
-//const Dashboard = () => {
-//  const [setError] = useState("");
-//  const navigate = useNavigate();
-
-//  const handleSignOut = () => {
-//    try {
-//      Swal.fire({
-//        title: "¿Desea Cerrar sesión?",
-//        icon: "question",
-//        showCancelButton: true,
-//        confirmButtonColor: "#c93c00",
-//        cancelButtonColor: "#e7aa2b",
-//        confirmButtonText: "Si",
-//        cancelButtonText: "No",
-//        width: "50vh",
-//        heightAuto: "true",
-//        position: "center",
-//      }).then((result) => {
-//        if (result.isConfirmed) {
-//          signOff(auth);
-//          navigate("/");
-//        }
-//      });
-//    } catch (error) {
-//      setError("Error del servidor");
-//      console.log(error);
-//    }
-//  };
-
-
-//  return (
-//    <div>
-//      <h1>estoy en dashboard</h1>
-//      <button onClick={() => { handleSignOut(auth) }}>Cerrar Sesión</button>
-//    </div>
-//  );
-//};
 
 export default Dashboard;
