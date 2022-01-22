@@ -191,7 +191,7 @@ $color-green: #5EBFA4;
 .label-commitments-ambition{
     font-size: 18px;
     width: 60%;
-
+}
 .container-commitments{
     width: 70%;
     font-family: 'Open Sans', sans-serif;
@@ -252,6 +252,5 @@ $color-green: #5EBFA4;
 
 .btn-save:active, .btn-add:active, .btn-delete:active {
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(2px);
-
+    transform: translateY(2px)
 }
