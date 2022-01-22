@@ -16,6 +16,7 @@ export default function Login() {
         signInWithEmailAndPassword(auth, email, password)
           .then(() => {
             navigate("dashboard");
+            console.log(auth.currentUser)
             console.log("ya entre")
           })
           .catch(() => {
