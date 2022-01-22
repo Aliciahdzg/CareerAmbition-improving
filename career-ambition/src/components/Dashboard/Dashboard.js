@@ -6,6 +6,8 @@ import { db } from '../../firebase/firebase-config';
 import Aside from '../Aside/Aside';
 import MainGoals from '../Dashboard/MainGoals';
 
+import { Icon } from '@iconify/react';
+
 import './dashboard.scss';
 
 const Dashboard = () => {
@@ -41,6 +43,10 @@ const Dashboard = () => {
                        <div>
                           Career Abition text
                        </div>
+                       <button>
+                          <Icon icon="mdi-light:pencil" color="#03588c" height="20" />
+                       </button>
+
                     </div>
                     <MainGoals />
                   </div>)
