@@ -13,14 +13,14 @@ const Aside = () => {
   const handleSignOut = () => {
     try {
       Swal.fire({
-        title: "¿Desea Cerrar sesión?",
+        title: "Do you want to log out?",
         icon: "question",
         showCancelButton: true,
-        confirmButtonColor: "#c93c00",
-        cancelButtonColor: "#e7aa2b",
-        confirmButtonText: "Si",
+        confirmButtonColor: "#5EBFA4",
+        cancelButtonColor: "#4397D2",
+        confirmButtonText: "Yes",
         cancelButtonText: "No",
-        width: "50vh",
+        width: "45vh",
         heightAuto: "true",
         position: "center",
       }).then((result) => {
@@ -30,10 +30,11 @@ const Aside = () => {
         }
       });
     } catch (error) {
-      setError("Error del servidor");
+      setError("Error server");
       console.log(error);
     }
   };
+
 
   const dashboard = () => {
     navigate("/dashboard")

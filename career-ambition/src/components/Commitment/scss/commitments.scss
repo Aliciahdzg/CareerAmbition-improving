@@ -52,7 +52,6 @@ $color-green: #5EBFA4;
 
 .h1-commitments{
     color: $color-darkblue;
-    margin-bottom: 20px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -77,6 +76,98 @@ $color-green: #5EBFA4;
     align-items: flex-start;
     font-family: 'Open Sans', sans-serif;
     margin-left: 14%;
+}
+.container-commitments{
+    width: 70%;
+    font-family: 'Open Sans', sans-serif;
+    margin:10px auto;
+}
+
+.div-btn-save{
+    width: 100%;
+    margin:0;
+    text-align: center;
+}
+
+.btn-save{
+    background-color: $color-darkblue;
+    color: $color-grey;
+    border-radius: 20px;
+    padding: 5px 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    border:none;
+    margin: 10px auto;
+}
+
+.btn-save:hover{
+    box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-add{
+    background-color: $color-green;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    border:none;
+    margin:5px 0px;
+}
+
+.btn-add:hover{
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-delete{
+    color:rgb(110, 3, 3);
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    border:1px solid rgb(110, 3, 3);
+    background-color: transparent;
+    margin:5px 0px;
+}
+
+.btn-delete:hover{
+    color:$color-grey;
+    background-color: rgba(110, 3, 3, 0.486);
+}
+
+.btn-save:active, .btn-add:active, .btn-delete:active {
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(2px);
+}
+
+.div-period{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+    margin:20px 0px;
+}
+
+.period-select{
+    height: fit-content;
+    font-size: 30px;
+    color:$color-darkblue;
+    margin:0px 20px;
+}
+
+.div-inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.div-inputs input{
+    width: 100%;
+}
+
+.label-commitments {
+    width: 30%;
 }
 .container-commitments{
     width: 70%;

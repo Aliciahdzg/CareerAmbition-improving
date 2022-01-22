@@ -4,7 +4,6 @@ import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../../firebase/firebase-config';
 
 import Aside from '../Aside/Aside';
-import MainGoals from '../Dashboard/MainGoals';
 
 import { Icon } from '@iconify/react';
 
@@ -48,7 +47,6 @@ const Dashboard = () => {
                        </button>
 
                     </div>
-                    <MainGoals />
                   </div>)
               )}
            

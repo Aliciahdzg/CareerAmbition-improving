@@ -16,10 +16,11 @@ export default function Login() {
         signInWithEmailAndPassword(auth, email, password)
           .then(() => {
             navigate("dashboard");
+            console.log(auth.currentUser)
             console.log("ya entre")
           })
           .catch(() => {
-            setError('Contraseña y/o correo inválidos, vuelve a intentar');
+            setError('Invalid email or password, please try again. ');
             setTimeout(() => setError(''), 3000);
     
           });

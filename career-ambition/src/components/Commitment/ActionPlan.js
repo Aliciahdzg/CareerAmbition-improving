@@ -13,13 +13,13 @@ export default function ActionPlan({info, smartGoal, dateSmartGoal, deleteRow, h
                     </tr>
                 </thead>
                 <tbody>
-                    {info.actionPlan.length !== 0 ? (info.actionPlan.map((elem, index)=> {
+                    {info.actionPlans.length !== 0 ? (info.actionPlans.map((elem, index)=> {
                         let keyName = 'row-smart-' + index
                         let keyBtnSmart = 'btn-smart-' + index
                         return (<tr key={keyName}>
                             <td>{elem.smartGoal}</td>
-                            <td>{elem.dateGoal}</td>
-                            <td ><button className='btn-delete' type='button' key={keyBtnSmart} onClick={()=> deleteRow(keyBtnSmart, 'actionPlan')}>Delete</button></td>
+                            <td>{elem.byWhen}</td>
+                            <td ><button className='btn-delete' type='button' key={keyBtnSmart} onClick={()=> deleteRow(keyBtnSmart, 'actionPlans')}>Delete</button></td>
                         </tr>)}
                     )): null}
                     <tr>

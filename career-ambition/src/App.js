@@ -1,18 +1,25 @@
 import React,{ useEffect, useState}from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from './firebase/firebase-config';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+
 import Login from "./components/Login/Login";
 import Dashboard from "./components/Dashboard/Dashboard"
 import Commitments from "./components/Commitment/Commitments";
-import Calendar from "./components/Calendar/Calendar"
+import CalendarView from "./components/Calendar/CalendarView";
+
+import './App.css';
+
 function App() {
   const [isLoggedIn, setIsLoggedIn]= useState(false)
+  const [userName, setUserName] =useState('')
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        setUserName(auth.currentUser.email)
+        console.log(auth.currentUser.email)
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
@@ -27,8 +34,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="dashboard" element={<Dashboard />} />
-        <Route exact path="commitment" element={<Commitments />} />
-        <Route exact path="calendar" element={<Calendar />} />
+        <Route exact path="commitment" element={<Commitments userName={userName}/>} />
+        <Route exact path="calendar" element={<CalendarView />} />
       </Routes>
     </BrowserRouter>
   );
