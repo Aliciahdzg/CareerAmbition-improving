@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth ,signOut} from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
+import { doc, setDoc, deleteDoc } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -16,7 +17,7 @@ const firebaseConfig = {
  const app = initializeApp(firebaseConfig);
  export const auth = getAuth();
 
-export const db = getFirestore();
+export const db = getFirestore(app);
 
  export const signOff = () => {
 
@@ -25,5 +26,14 @@ export const db = getFirestore();
   }).catch((error) => {
     console.log(error)
   });
+}
+
+export const addNewDoc = (idUser, period, year, data) => {
+  let id = idUser + period + year;
+  return setDoc(doc(db, "careerAmbitions", id), data);
+}
+
+export const deleteDesiredDoc = (idDoc) => {
+  return deleteDoc(doc(db, "careerAmbitions", idDoc));
 }
 

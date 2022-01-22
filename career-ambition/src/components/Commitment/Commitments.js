@@ -6,11 +6,13 @@ import AreasOfFocus from './AreasOfFocus';
 import PlannedPractices from './PlannedPractices';
 import Accountability from './Accountability';
 import DeliberatePractice from './DeliberatePractice';
+import { addNewDoc } from '../../firebase/firebase-config';
 
 export default function Commitments({ userName }) {
     let [info, setInfo] = useState({
-        name: '',
-        email: userName,
+        careerAmbition: '',
+        year: new Date().getFullYear(),
+        useruid: userName,
         period: '',
         mainGoal: '',
         areasOfFocus: [],
@@ -24,12 +26,12 @@ export default function Commitments({ userName }) {
     let [dateSmartGoal, setDateSmartGoal] = useState('')
 
     const addRowsSmartGoal = (goal, date) => {
-        if (goal !== '' && date !== '') {
+        if (goal !== '') {
             setInfo({ ...info, actionPlans: [...info.actionPlans, { smartGoal: goal, byWhen: date }] })
             setSmartGoal('')
             setDateSmartGoal('')
         } else {
-            alert('Please, fill all the blank spaces')
+            alert('Please, fill at least the SMART Goal')
         }
 
     }
@@ -85,13 +87,13 @@ export default function Commitments({ userName }) {
     let [via, setVia] = useState('')
 
     const addRowsMentor = (mentors, whens, vias) => {
-        if (mentors !== '' && whens !== '' && vias !== '') {
+        if (mentors !== '') {
             setInfo({ ...info, accountability: [...info.accountability, { person: mentors, frecuency: whens, vía: vias }] })
             setMentor('')
             setWhen('')
             setVia('')
         } else {
-            alert('Please, fill all the blank spaces')
+            alert('Please, fill the name of your mentor')
         }
 
     }
@@ -157,11 +159,37 @@ export default function Commitments({ userName }) {
         setInfo({ ...info, mainGoal: maingoals })
     }
 
+    const handleCareerAmbition = (careerAmbitions) => {
+        setInfo({ ...info, careerAmbition: careerAmbitions })
+    }
+
 
     const saveData = () => {
-        console.log(userName)
-        console.log(info)
+        if (info.period !== '') {
+            console.log(userName)
+            console.log(info)
 
+            addNewDoc(userName, info.period, info.year, info)
+                .then(() => {
+                    setInfo({
+                        careerAmbition:'',
+                        year: new Date().getFullYear(),
+                        useruid: userName,
+                        period: '',
+                        mainGoal: '',
+                        areasOfFocus: [],
+                        actionPlans: [],
+                        plannedPractices: [],
+                        accountability: [],
+                        deliberatePractice: []
+                    })
+                })
+                .catch((error) => {
+                    throw error;
+                });
+        } else {
+            alert('Please, select a period')
+        }
     }
 
     return (
@@ -178,8 +206,12 @@ export default function Commitments({ userName }) {
                         <option value="Q4">Q4</option>
                     </select>
                 </div>
-                <div className='div-inputs'>
-                    <label htmlFor='mainGoal' className='label-commitments'>My main goal is: </label>
+                <div className='div-ambition'>
+                    <label htmlFor='careerAmbition' className='label-commitments-ambition'>My Career Ambition is: </label>
+                    <input type='text' onChange={(e) => handleCareerAmbition(e.target.value)} value={info.careerAmbition} />
+                </div>
+                <div className='div-goal'>
+                    <label htmlFor='mainGoal' className='label-commitments-goal'>My main goal is: </label>
                     <input type='text' onChange={(e) => handleMainGoal(e.target.value)} value={info.mainGoal} />
                 </div>
                 <AreasOfFocus info={info} category={category} addRowsCategory={addRowsCategory} handleCategory={handleCategory} deleteRow={deleteRow} />
