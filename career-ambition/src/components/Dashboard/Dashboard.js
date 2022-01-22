@@ -19,7 +19,7 @@ const Dashboard = ({currentUser}) => {
    const [careerAmbition, setCareerAmbition] = useState('');
    const [isInputActive, setIsInputActive] = useState(false);
 
-   const enter = useKeypress('Enter');
+   // const enter = useKeypress('Enter');
  
    const getUser = async (uid) => {
     const docRef = doc(db, 'users', uid);
