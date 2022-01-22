@@ -18,8 +18,8 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserName(auth.currentUser.email)
-        console.log(auth.currentUser.email)
+        setUserName(auth.currentUser.uid)
+        console.log(auth.currentUser.uid)
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
