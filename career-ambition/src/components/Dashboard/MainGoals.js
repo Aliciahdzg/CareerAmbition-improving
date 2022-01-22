@@ -2,18 +2,18 @@ import React from 'react';
 
 import { Icon } from '@iconify/react';
 
-import './mainGoals.scss';
+import './styles/mainGoals.scss';
 
 const MainGoals = () => {
     
-  return (<>
+  return (
   <table className='main-goals'>
       <thead>
          <tr>
-             <th>Period</th>
+             <th className='period'>Period</th>
              <th>Main Goal</th>
-             <th>Status</th>
-             <th>Action</th>
+             <th className='status'>Status</th>
+             <th className='action'>Action</th>
          </tr>
       </thead>
       <tbody>
@@ -72,7 +72,7 @@ const MainGoals = () => {
       </tr>
       </tbody>
   </table>
-  </>)
+  )
 };
 
 export default MainGoals;

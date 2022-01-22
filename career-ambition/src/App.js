@@ -12,20 +12,19 @@ import CalendarView from "./components/Calendar/CalendarView";
 import './App.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn]= useState(false)
-  const [userName, setUserName] =useState('')
+  const [isLoggedIn, setIsLoggedIn]= useState(false);
+  const [currentUser, setCurrentUser] =useState(null);
 
-  useEffect(() => {
+ // useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserName(auth.currentUser.email)
-        console.log(auth.currentUser.email)
+        setCurrentUser(user)
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
       }
     });
-  }, []);
+ // }, []);
   console.log(isLoggedIn)
 
 
@@ -33,8 +32,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route exact path="dashboard" element={<Dashboard />} />
-        <Route exact path="commitment" element={<Commitments userName={userName}/>} />
+        <Route exact path="dashboard" element={<Dashboard currentUser={currentUser}/>} />
+        <Route exact path="commitment" element={<Commitments currentUser={currentUser}/>} />
         <Route exact path="calendar" element={<CalendarView />} />
       </Routes>
     </BrowserRouter>

@@ -1,8 +1,9 @@
-@import '../variables.scss';
+@import '../../variables.scss';
 
 .main-goals {
     width: 90%;
-    margin-top: 5vmin;
+    margin: 5vmin 0 5vmin 0;
+    border-collapse: collapse;
     th {
         padding: 1vmin;
         text-align: left;
@@ -19,6 +20,17 @@
           outline: none;
           border:transparent;
           margin: 0.5vmin;
+          cursor: pointer;
         }
     }
+}
+
+.period{
+    width: 6%;
+}
+.status {
+    width: 8%;
+}
+.action{
+    width: 7%;
 }
