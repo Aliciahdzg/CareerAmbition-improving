@@ -5,7 +5,10 @@ import { db } from '../../firebase/firebase-config';
 
 import Aside from '../Aside/Aside';
 
+import { Icon } from '@iconify/react';
+
 import './dashboard.scss';
+import MainGoals from './MainGoals';
 
 const Dashboard = () => {
    const [users, setUsers] = useState([]);
@@ -40,12 +43,13 @@ const Dashboard = () => {
                        <div>
                           Career Abition text
                        </div>
+                       <button>
+                          <Icon icon="mdi-light:pencil" color="#03588c" height="20" />
+                       </button>
+                       <MainGoals />
                     </div>
                   </div>)
               )}
-           
-            
-            
         </div>
     )
 }

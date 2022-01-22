@@ -33,7 +33,6 @@ export default function Commitments({ userName }) {
         } else {
             alert('Please, fill at least the SMART Goal')
         }
-
     }
 
     const handleSmartGoal = (goal) => {
@@ -53,7 +52,6 @@ export default function Commitments({ userName }) {
         } else {
             alert('Please, fill all the blank spaces')
         }
-
     }
 
     const handleCategory = (categ) => {
@@ -71,7 +69,6 @@ export default function Commitments({ userName }) {
         } else {
             alert('Please, fill all the blank spaces')
         }
-
     }
 
     const handleActions = (actions) => {
@@ -95,7 +92,6 @@ export default function Commitments({ userName }) {
         } else {
             alert('Please, fill the name of your mentor')
         }
-
     }
 
     const handleMentor = (mentors) => {
@@ -123,7 +119,6 @@ export default function Commitments({ userName }) {
         } else {
             alert('Please, fill all the blank spaces')
         }
-
     }
 
     const handlePractice = (practices) => {
@@ -191,7 +186,6 @@ export default function Commitments({ userName }) {
             alert('Please, select a period')
         }
     }
-
     return (
         <div className='body-commitments'>
             <Aside />

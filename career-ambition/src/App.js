@@ -7,7 +7,7 @@ import { auth } from './firebase/firebase-config';
 import Login from "./components/Login/Login";
 import Dashboard from "./components/Dashboard/Dashboard"
 import Commitments from "./components/Commitment/Commitments";
-import Calendar from "./components/Calendar/Calendar";
+import CalendarView from "./components/Calendar/CalendarView";
 
 import './App.css';
 
@@ -35,7 +35,7 @@ function App() {
         <Route exact path="/" element={<Login />} />
         <Route exact path="dashboard" element={<Dashboard />} />
         <Route exact path="commitment" element={<Commitments userName={userName}/>} />
-        <Route exact path="calendar" element={<Calendar />} />
+        <Route exact path="calendar" element={<CalendarView />} />
       </Routes>
     </BrowserRouter>
   );
