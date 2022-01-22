@@ -20,7 +20,7 @@ export default function Login() {
             console.log("ya entre")
           })
           .catch(() => {
-            setError('Invalid email or password, please try again.');
+            setError('Invalid email or password, please try again. ');
             setTimeout(() => setError(''), 3000);
     
           });

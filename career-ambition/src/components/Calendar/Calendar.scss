@@ -1,0 +1,23 @@
+.events {
+  background-color: pink;
+}
+.cal {
+  display: flex;
+  flex-direction: column;
+  width: 1154px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-left: 10vw;
+}
+.notes-month {
+  background-color: pink;
+}
+.allCal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 1.5em;
+}
