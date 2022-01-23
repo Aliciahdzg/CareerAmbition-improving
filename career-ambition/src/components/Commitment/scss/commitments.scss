@@ -155,19 +155,42 @@ $color-green: #5EBFA4;
     margin:0px 20px;
 }
 
-.div-inputs{
+.div-ambition, .div-goal{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin: 10px 0;
 }
 
-.div-inputs input{
+
+
+.div-goal input{
     width: 100%;
+    text-align: center;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    background-color: $color-grey;
 }
 
-.label-commitments {
+.div-ambition input{
+    width: 100%;
+    text-align: center;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    background-color: $color-grey;
+}
+
+.label-commitments-goal {
     width: 30%;
+}
+
+
+.label-commitments-ambition{
+    font-size: 18px;
+    width: 60%;
 }
 .container-commitments{
     width: 70%;
@@ -229,5 +252,5 @@ $color-green: #5EBFA4;
 
 .btn-save:active, .btn-add:active, .btn-delete:active {
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(2px);
+    transform: translateY(2px)
 }

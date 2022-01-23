@@ -29,8 +29,10 @@ export default function PlannedPractices({ info, action, frecuency, deleteRow, h
                             <select name="frecuency" onChange={(e) => handleFrecuency(e.target.value)} value={frecuency}>
                                 <option value="" disabled>Choose one</option>
                                 <option value="Daily">Daily</option>
+                                <option value="Twice a week">Twice a week</option>
                                 <option value="Weekly">Weekly</option>
                                 <option value="Monthly">Monthly</option>
+                                <option value="Not sure">Not Sure</option>
                             </select>
                         </td>
                         <td><button className='btn-add' type='button' onClick={() => { addRowsAction(action, frecuency) }}>Add</button></td>
