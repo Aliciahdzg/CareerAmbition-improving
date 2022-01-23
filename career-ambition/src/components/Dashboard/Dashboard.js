@@ -1,56 +1,77 @@
 import React, { useState, useEffect } from 'react'
 
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebase-config';
 
 import Aside from '../Aside/Aside';
 
 import { Icon } from '@iconify/react';
 
-import './dashboard.scss';
 import MainGoals from './MainGoals';
+import './dashboard.scss';
 
-const Dashboard = () => {
-   const [users, setUsers] = useState([]);
 
-   useEffect(() => {
-    const renderUsers = () => {
-        try {
-          onSnapshot(query(collection(db, 'users')), (querySnapshot) => {
-              const documents = [];
-              querySnapshot.forEach((doc) => {
-                  documents.push({ id: doc.id, ...doc.data()});
-              });
-              setUsers(documents);
-          });
-        } catch (error) {
-            console.log(error);
+const Dashboard = ({ currentUser }) => {
+    const  uid  = currentUser.uid;
+
+    const [user, setUser] = useState({});
+
+    const [careerAmbition, setCareerAmbition] = useState('');
+    //const [isInputActive, setIsInputActive] = useState(false);
+
+    // const enter = useKeypress('Enter');
+
+    const getUser = async (uid) => {
+        const docRef = doc(db, 'users', uid);
+        const docSnap = await getDoc(docRef);
+        setUser(docSnap.data())
+    }
+    useEffect(() => {
+        getUser(uid);
+    }, []);
+
+    /*const careerAmbitionEdit = (props) => {
+        return (
+            <p>
+                <textarea />
+            </p>
+        )
+    }*/
+
+    /*useEffect(() => {
+        if (isInputActive) {
+            // if Enter is pressed, save the text and case the editor
+            if (enter) {
+
+            }
         }
-    };
-    return renderUsers();
-   }, []);
+    }, [])*/
+    // const createCareerAmbition = () => {}
+    // const handleCareerAmbition => {}
 
     return (
-        <div>
+        <>
             <Aside />
-            
-              {users.map((user) => (
-                  <div className='personal-information'key={user.id }>
-                    <h3>{user.name}</h3>
-                     <p>{user.email}</p>
-                    <div className='career-ambition'>
-                       <h2>Career Ambition</h2>
-                       <div>
-                          Career Abition text
-                       </div>
-                       <button>
-                          <Icon icon="mdi-light:pencil" color="#03588c" height="20" />
-                       </button>
-                       <MainGoals />
+            <div className='container-dashboard'>
+                <h3>{user.name}</h3>
+                <h4>{user.email}</h4>
+                <div className='career-ambition'>
+                    <h2>Career Ambition</h2>
+                    <div className='careerText-editButton'>
+                        <p>Career Ambition text</p>
+                        <textarea value={careerAmbition} onChange={(e) => setCareerAmbition(e.target.value)} ></textarea>
+                        <button>
+                            <Icon icon="mdi-light:pencil" color="#03588c" height="40" />
+                        </button>
                     </div>
-                  </div>)
-              )}
-        </div>
+                    <div className="smart-goal">
+                        <h3>Current SMART Goal</h3>
+                        <p>SMART Goal text</p>
+                    </div>
+                    <MainGoals />
+                </div>
+            </div>
+        </>
     )
 }
 

@@ -8,11 +8,11 @@ import Accountability from './Accountability';
 import DeliberatePractice from './DeliberatePractice';
 import { addNewDoc } from '../../firebase/firebase-config';
 
-export default function Commitments({ userName }) {
+export default function Commitments({ currentUser }) {
     let [info, setInfo] = useState({
         careerAmbition: '',
         year: new Date().getFullYear(),
-        useruid: userName,
+        useruid: currentUser.uid,
         period: '',
         mainGoal: '',
         areasOfFocus: [],
@@ -161,15 +161,15 @@ export default function Commitments({ userName }) {
 
     const saveData = () => {
         if (info.period !== '') {
-            console.log(userName)
+            console.log(currentUser.uid)
             console.log(info)
 
-            addNewDoc(userName, info.period, info.year, info)
+            addNewDoc(currentUser.uid, info.period, info.year, info)
                 .then(() => {
                     setInfo({
                         careerAmbition:'',
                         year: new Date().getFullYear(),
-                        useruid: userName,
+                        useruid: currentUser.uid,
                         period: '',
                         mainGoal: '',
                         areasOfFocus: [],

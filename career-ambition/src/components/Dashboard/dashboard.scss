@@ -1,18 +1,19 @@
 @import '../variables.scss';
 
-.personal-information {
-    margin-top: 5vmin;
+.container-dashboard {
     margin-left: 15%;
+    overflow: auto;
     h3{
         margin: 0.5vmin;
         font-family: $body;
         color: $blue;
+        font-size: 24px;
     }
 
-    p{ 
+    h4{ 
         font-family: $body;
         color: $blue2;
-        font-size: 1.5vmin;
+        font-size: 24px;
     }
 }
 
@@ -20,16 +21,46 @@
     h2 {
         margin: 5vmin 0 2vmin 0;
         font-family: $body;
+        font-size: 36px;
         color: $blue;
     }
-    div {
+    
+}
+.careerText-editButton {
+    display: flex;
+    align-items: center;
+    p {
         background-color: $white2;
         margin: 2vmin 0 2vmin 0;
         padding: 1vmin;
         font-family: $body;
+        font-size: 24px;
         color: $letterColor;
         width: 50%;
         border-radius: 10px;
+        height: 15vmin;
+    }
+    button {
+        margin: 1vmin;
+        height: 4vmin;
+        background: transparent;
+          outline: none;
+          border:transparent;
+          cursor: pointer;
+    }
+}
+.smart-goal{
+    p {
+        margin: 1vmin;
+        background-color: $white2;
+        margin: 2vmin 0 2vmin 0;
+        padding: 1vmin;
+        font-family: $body;
+        font-size: 24px;
+        color: $letterColor;
+        width: 50%;
+        border-radius: 10px;
+        height: 15vmin;
     }
 }
 
