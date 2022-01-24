@@ -9,7 +9,6 @@ export const FormLogin = ({ handleLogin }) => {
   return (
     <>
       <form className="p-form">
-                  
         <p className="title-form"> Email:</p>
         <input className="input-login" type="text" pattern=".+@improving\.com" size="30" onChange={handleEmail} />
         <p className="title-form">	 Password:</p>

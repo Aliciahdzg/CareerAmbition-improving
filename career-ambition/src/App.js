@@ -18,23 +18,38 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setCurrentUser(auth.currentUser)
-        console.log(auth.currentUser)
+        setCurrentUser(user)
+        console.log(user)
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
       }
     });
-  }, []);
-  console.log(isLoggedIn)
+ }, []);
+  console.log(isLoggedIn) 
+
+  let [textCareer, setTextCareer] = useState('');
+  const handleTextCareer = (newText) => {
+    setTextCareer(newText)
+  }
+  let [infoBtn, setInfoBtn] = useState({
+    period: '',
+    year:''
+  })
+  const handleInfoBtn = (periods, years) => {
+    setInfoBtn({
+      period: periods,
+      year: years
+    })
+  }
 
 
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route exact path="dashboard" element={<Dashboard currentUser={currentUser}/>} />
-        <Route exact path="commitment" element={<Commitments currentUser={currentUser}/>} />
+        <Route exact path="dashboard" element={<Dashboard currentUser={currentUser} handleTextCareer={handleTextCareer} handleInfoBtn={handleInfoBtn} />} />
+        <Route exact path="commitment" element={<Commitments currentUser={currentUser} textCareer={textCareer} infoBtn={infoBtn} />} />
         <Route exact path="calendar" element={<CalendarView />} />
       </Routes>
     </BrowserRouter>
