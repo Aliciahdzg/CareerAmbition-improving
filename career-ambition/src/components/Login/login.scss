@@ -74,14 +74,15 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2vmax;
+  margin-top: 3.5em;
   position: relative;
-  padding: 1em 3em;
+  padding: 0.5em 2em;
   display: block;
   text-decoration: none;
   overflow: hidden;
   border-radius: 2.45em;
   border: none;
+  cursor: pointer;
 }
 
 .login-btn span {

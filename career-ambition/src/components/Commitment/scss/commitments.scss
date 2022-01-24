@@ -173,12 +173,13 @@ body::-webkit-scrollbar {
 }
 
 .period-select {
-  background: #5ebfa4af;
+  background:transparent;
   border: none;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 24px;
   height: 30px;
-  padding: 1px 5px;
+  margin-top: 0;
+  margin-bottom: 15px;
   color: $color-darkblue;
   margin-left: 1vw;
 }
