@@ -51,7 +51,7 @@ const Aside = () => {
                     <div className="icons">
                     <Icon icon="carbon:user-avatar" className="avatar" />
                     <Icon icon="ic:outline-dashboard-customize" className="dashboard"
-                    onClick={dashboard}/>
+                    onClick={dashboard}/> 
                     <p>Dashboard</p>
                     <Icon icon="bx:bxs-calendar" className="calendar"
                     onClick={calendar}/>

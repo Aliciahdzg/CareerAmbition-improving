@@ -7,6 +7,7 @@ import PlannedPractices from './PlannedPractices';
 import Accountability from './Accountability';
 import DeliberatePractice from './DeliberatePractice';
 import { addNewDoc } from '../../firebase/firebase-config';
+import Swal from "sweetalert2";
 
 export default function Commitments({ currentUser }) {
     let [info, setInfo] = useState({
@@ -31,7 +32,10 @@ export default function Commitments({ currentUser }) {
             setSmartGoal('')
             setDateSmartGoal('')
         } else {
-            alert('Please, fill at least the SMART Goal')
+            Swal.fire({title: 'Please, fill at least the SMART Goal',
+            icon: "warning",
+            confirmButtonColor: "#5EBFA4",});
+            //alert('Please, fill at least the SMART Goal')
         }
     }
 
@@ -50,7 +54,10 @@ export default function Commitments({ currentUser }) {
             setInfo({ ...info, areasOfFocus: [...info.areasOfFocus, categ] })
             setCategory('')
         } else {
-            alert('Please, fill all the blank spaces')
+            Swal.fire({title: 'Please, fill all the blank spaces',
+            icon: "warning",
+            confirmButtonColor: "#5EBFA4",});
+            //alert('Please, fill all the blank spaces')
         }
     }
 
@@ -67,7 +74,11 @@ export default function Commitments({ currentUser }) {
             setAction('')
             setFrecuency('')
         } else {
-            alert('Please, fill all the blank spaces')
+            Swal.fire({title: 'Please, fill all the blank spaces',
+            icon: "warning",
+            confirmButtonColor: "#5EBFA4",});
+            
+            //alert('Please, fill all the blank spaces')
         }
     }
 
@@ -90,7 +101,10 @@ export default function Commitments({ currentUser }) {
             setWhen('')
             setVia('')
         } else {
-            alert('Please, fill the name of your mentor')
+            Swal.fire({title: 'Please, fill all the name of your mentor',
+            icon: "warning",
+            confirmButtonColor: "#5EBFA4",});
+            //alert('Please, fill the name of your mentor')
         }
     }
 
@@ -117,7 +131,11 @@ export default function Commitments({ currentUser }) {
             setDate('')
             setOutcomes('')
         } else {
-            alert('Please, fill all the blank spaces')
+            Swal.fire({title: 'Please, fill all the blank spaces',
+            icon: "warning",
+            confirmButtonColor: "#5EBFA4",});
+
+            //alert('Please, fill all the blank spaces')
         }
     }
 
@@ -183,7 +201,12 @@ export default function Commitments({ currentUser }) {
                     throw error;
                 });
         } else {
-            alert('Please, select a period')
+
+            Swal.fire({title: 'Please, select a period',
+            icon: "warning",
+            confirmButtonColor: "#5EBFA4",});
+
+            //alert('Please, select a period')
         }
     }
     return (

@@ -1,46 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
+$color-grey: #f2f2f2;
+$color-darkblue: #03588c;
+$color-lightblue: #035aa6;
+$color-green: #5ebfa4;
+
+* {
+  margin: 0;
+  padding: 0;
 }
-p{
-    font-size: 10px;
+p {
+  font-size: 10px;
 }
 
-.aside{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 169px;
-    left: 0px;
-    top: 0px;
-    background: #434546;
-    height: 100%;
-    font-size: 4em;
-    flex-direction: column;
+.aside {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 169px;
+  left: 0px;
+  top: 0px;
+  background: #434546;
+  height: 100%;
+  font-size: 4em;
+  flex-direction: column;
+  box-shadow: 3px 1px 2px rgba(0, 0, 0, 0.164);
 }
 
-.icons{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    margin: 5px;
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin: 5px;
 }
-.logout, .calendar, .edit{
-    margin-top: 20px;
+.logout,
+.calendar,
+.edit {
+  margin-top: 20px;
 }
-.avatar{
-    margin-bottom: 40px;
-    font-size: 1.5em;
 
+.avatar {
+  margin-bottom: 40px;
+  font-size: 1.5em;
 }
-.logout{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin-bottom:17px;
+.logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 17px;
+}
+
+.logout:hover {
+  color: $color-green;
+}
+.calendar:hover {
+  color: $color-green;
+}
+.edit:hover {
+  color: $color-green;
+}
+.dashboard:hover {
+  color: $color-green;
+}
+
+.logout:active {
+  color: $color-green;
+}
+.calendar:active {
+  color: $color-green;
+}
+.edit:active {
+  color: $color-green;
+}
+.dashboard:active {
+  color: $color-green;
 }

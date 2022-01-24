@@ -10,9 +10,9 @@ export const FormLogin = ({ handleLogin }) => {
     <>
       <form className="p-form">
                   
-                  <p > &#9993;Email:</p>
+                  <p className="title-form"> Email:</p>
                   <input className="input-login" type="text" pattern=".+@improving\.com" size="30" onChange={handleEmail} />
-                  <p>	&#128477; Password:</p>
+                  <p className="title-form">	 Password:</p>
                   <input className="input-login" type="password" size="6" pattern="[0-9]{6}"
         required onChange={handlePassword}/>
 

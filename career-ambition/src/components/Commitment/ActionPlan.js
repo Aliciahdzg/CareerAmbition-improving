@@ -23,8 +23,8 @@ export default function ActionPlan({info, smartGoal, dateSmartGoal, deleteRow, h
                         </tr>)}
                     )): null}
                     <tr>
-                        <td><input type='text' onChange={(e) => handleSmartGoal(e.target.value)} value={smartGoal}/></td>
-                        <td><input type='text' onChange={(e) => handleDateSmartGoal(e.target.value)} value={dateSmartGoal}/></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handleSmartGoal(e.target.value)} value={smartGoal}/></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handleDateSmartGoal(e.target.value)} value={dateSmartGoal}/></td>
                         <td><button className='btn-add' type='button' onClick={()=>{addRowsSmartGoal(smartGoal,dateSmartGoal)}}>Add</button></td>
                     </tr>
                 </tbody>

@@ -24,9 +24,9 @@ export default function PlannedPractices({ info, action, frecuency, deleteRow, h
                     }
                     )) : null}
                     <tr>
-                        <td><input type='text' onChange={(e) => handleActions(e.target.value)} value={action} /></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handleActions(e.target.value)} value={action} /></td>
                         <td>
-                            <select name="frecuency" onChange={(e) => handleFrecuency(e.target.value)} value={frecuency}>
+                            <select name="frecuency" className='input-table' onChange={(e) => handleFrecuency(e.target.value)} value={frecuency}>
                                 <option value="" disabled>Choose one</option>
                                 <option value="Daily">Daily</option>
                                 <option value="Twice a week">Twice a week</option>

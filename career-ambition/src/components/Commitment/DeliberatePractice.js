@@ -25,9 +25,9 @@ export default function DeliberatePractice({info, practice, date, outcomes, dele
                         </tr>)}
                     )): null}
                     <tr>
-                        <td><input type='text' onChange={(e) => handlePractice(e.target.value)} value={practice}/></td>
-                        <td><input type='date' onChange={(e) => handleDate(e.target.value)} value={date}/></td>
-                        <td><input type='text' onChange={(e) => handleOutcomes(e.target.value)} value={outcomes}/></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handlePractice(e.target.value)} value={practice}/></td>
+                        <td><input type='date' className='input-table' onChange={(e) => handleDate(e.target.value)} value={date}/></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handleOutcomes(e.target.value)} value={outcomes}/></td>
                         <td><button className='btn-add' type='button' onClick={()=>{addRowsPractice(practice, date, outcomes)}}>Add</button></td>
                     </tr>
                 </tbody>
