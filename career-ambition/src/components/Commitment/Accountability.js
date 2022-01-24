@@ -25,16 +25,16 @@ export default function Accountability({info, mentor, when, via, deleteRow, hand
                         </tr>)}
                     )): null}
                     <tr>
-                        <td><input type='text' onChange={(e) => handleMentor(e.target.value)} value={mentor}/></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handleMentor(e.target.value)} value={mentor}/></td>
                         <td>
-                            <select name="when" onChange={(e) => handleWhen(e.target.value)} value={when}>
+                            <select name="when"  className='input-table' onChange={(e) => handleWhen(e.target.value)} value={when}>
                                 <option value="" disabled>Choose one</option>
                                 <option value="Daily">Daily</option>
                                 <option value="Weekly">Weekly</option>
                                 <option value="Monthly">Monthly</option>
                             </select>
                         </td>
-                        <td><input type='text' onChange={(e) => handleVia(e.target.value)} value={via}/></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handleVia(e.target.value)} value={via}/></td>
                         <td><button className='btn-add' type='button' onClick={()=>{addRowsMentor(mentor, when, via)}}>Add</button></td>
                     </tr>
                 </tbody>

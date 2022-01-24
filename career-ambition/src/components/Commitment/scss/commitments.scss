@@ -1,256 +1,294 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-$color-grey: #F2F2F2;
-$color-darkblue: #03588C;
-$color-lightblue: #035AA6;
-$color-green: #5EBFA4;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+$color-grey: #f2f2f2;
+$color-darkblue: #03588c;
+$color-lightblue: #035aa6;
+$color-green: #5ebfa4;
 
-.table-commitments{
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+
+
+body::-webkit-scrollbar {
+    width: 10px;               
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: $color-grey;        
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: $color-green;    
+    border-radius: 20px;       
+    border: 3px solid $color-green; 
+  }
+
+.table-commitments {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: small;
+  font-style: normal;
+  border: none;
 }
 
-.table-commitments thead{
-    background-color: $color-darkblue;
-    color: $color-grey;
+.table-commitments thead {
+  border-top-right-radius: inherit;
+  background-color: $color-darkblue;
+  color: $color-grey;
 }
 
-.table-commitments tbody{
-    background-color: $color-grey;
+.table-commitments tbody {
+  background-color: $color-grey;
 }
 
 .table-commitments tr {
-    border: 1px solid $color-darkblue;
+  border: 2px solid #03578c00;
 }
 
 .table-commitments td {
-    border: 1px solid $color-darkblue;
+  border: 0.5px solid $color-darkblue;
 }
 
 .table-commitments td input {
-    width: 100%;
-    height: 100%;
-    outline: none;
-    text-decoration: none;
-    border:none;
-    text-align: center;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  text-align: center;
 }
 
 .table-commitments td select {
-    width: 98%;
-    height: 98%;
-    outline: none;
-    text-decoration: none;
-    border:none;
+  width: 98%;
+  height: 98%;
+  outline: none;
+  text-decoration: none;
+  border: none;
 }
 
 .table-btns {
-    width:10%;
-    
+  width: 10%;
 }
 
-.h1-commitments{
-    color: $color-darkblue;
-    font-family: 'Open Sans', sans-serif;
+.h1-commitments {
+  color: $color-darkblue;
+  font-family: "Open Sans", sans-serif;
 }
 
-.title-commitments{
-    color:black;
-    text-align: center;
-    background-color: transparent;
-    width: fit-content;
-    padding: 2px 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+.title-commitments {
+  color: black;
+  text-align: center;
+  width: fit-content;
+  padding: 2px 15px;
+  font-family: "Open Sans", sans-serif;
+  font-size: medium;
+  background-color: #5ebfa4b6;
+  border-radius: 72% 28% 100% 0% / 45% 100% 0% 55%;
+  
 }
 
-.aside{
-    height: 100vh;
+.aside {
+  height: 100vh;
 }
-.body-commitments{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-family: 'Open Sans', sans-serif;
-    margin-left: 14%;
+.body-commitments {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 10%;
 }
-.container-commitments{
-    width: 70%;
-    font-family: 'Open Sans', sans-serif;
-    margin:10px auto;
-}
-
-.div-btn-save{
-    width: 100%;
-    margin:0;
-    text-align: center;
+.container-commitments {
+  width: 80%;
+  font-family: "Open Sans", sans-serif;
+  margin: 10px auto;
 }
 
-.btn-save{
-    background-color: $color-darkblue;
-    color: $color-grey;
-    border-radius: 20px;
-    padding: 5px 25px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    border:none;
-    margin: 10px auto;
+.div-btn-save {
+  width: 100%;
+  margin: 0;
+  text-align: center;
 }
 
-.btn-save:hover{
-    box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(-2px);
+.btn-save {
+  background-color: $color-darkblue;
+  color: $color-grey;
+  border-radius: 20px;
+  padding: 5px 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  border: none;
+  margin: 10px auto;
 }
 
-.btn-add{
-    background-color: $color-green;
-    border-radius: 5px;
-    padding: 2px 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    border:none;
-    margin:5px 0px;
+.btn-save:hover {
+  //  box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
 }
 
-.btn-add:hover{
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+.btn-add {
+  background-color: $color-green;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  border: none;
+  margin: 5px 0px;
 }
 
-.btn-delete{
-    color:rgb(110, 3, 3);
-    border-radius: 5px;
-    padding: 2px 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    border:1px solid rgb(110, 3, 3);
-    background-color: transparent;
-    margin:5px 0px;
+.btn-add:hover {
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
-.btn-delete:hover{
-    color:$color-grey;
-    background-color: rgba(110, 3, 3, 0.486);
+.btn-delete {
+  color: rgb(110, 3, 3);
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  border: 1px solid rgb(110, 3, 3);
+  background-color: transparent;
+  margin: 5px 0px;
 }
 
-.btn-save:active, .btn-add:active, .btn-delete:active {
-    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(2px);
+.btn-delete:hover {
+  color: $color-grey;
+  background-color: rgba(110, 3, 3, 0.486);
 }
 
-.div-period{
-    display:flex;
-    flex-direction:row;
-    justify-content: flex-start;
-    align-items: center;
-    margin:20px 0px;
+.btn-save:active,
+.btn-add:active,
+.btn-delete:active {
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+  transform: translateY(2px);
 }
 
-.period-select{
-    height: fit-content;
-    font-size: 30px;
-    color:$color-darkblue;
-    margin:0px 20px;
+.div-period {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0px;
 }
 
-.div-ambition, .div-goal{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 10px 0;
+.period-select {
+  background:transparent;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  height: 30px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: $color-darkblue;
+  margin-left: 1vw;
 }
 
-
-
-.div-goal input{
-    width: 100%;
-    text-align: center;
-    outline: none;
-    border:none;
-    border-radius: 5px;
-    background-color: $color-grey;
+.div-ambition,
+.div-goal {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 10px 0;
 }
 
-.div-ambition input{
-    width: 100%;
-    text-align: center;
-    outline: none;
-    border:none;
-    border-radius: 5px;
-    background-color: $color-grey;
+.div-goal input {
+  width: 100%;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: $color-grey;
+}
+
+.div-ambition input {
+  width: 100%;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: $color-grey;
 }
 
 .label-commitments-goal {
-    width: 30%;
+  width: 30%;
 }
 
-
-.label-commitments-ambition{
-    font-size: 18px;
-    width: 60%;
+.label-commitments-ambition {
+  font-size: 18px;
+  width: 60%;
 }
-.container-commitments{
-    width: 70%;
-    font-family: 'Open Sans', sans-serif;
-    margin:10px auto;
-}
-
-.div-btn-save{
-    width: 100%;
-    margin:0;
-    text-align: center;
+.container-commitments {
+  width: 70%;
+  font-family: "Open Sans", sans-serif;
+  margin: 10px auto;
 }
 
-.btn-save{
-    background-color: $color-darkblue;
-    color: $color-grey;
-    border-radius: 20px;
-    padding: 5px 25px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    border:none;
-    margin: 10px auto;
+.div-btn-save {
+  width: 100%;
+  margin: 0;
+  text-align: center;
 }
 
-.btn-save:hover{
-    box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(-2px);
+.btn-save {
+  background-color: $color-darkblue;
+  color: $color-grey;
+  border-radius: 20px;
+  padding: 5px 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  border: none;
+  margin: 10px auto;
 }
 
-.btn-add{
-    background-color: $color-green;
-    border-radius: 5px;
-    padding: 2px 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    border:none;
-    margin:5px 0px;
+.btn-save:hover {
+    box-shadow:  5px 5px 2px rgba(0, 0, 0, 0.164);
+    transform: translateY(01px);
 }
 
-.btn-add:hover{
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+.btn-add {
+  background-color: $color-green;
+  border-radius: 5px;
+  padding: 2px 12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  border: none;
+  margin: 5px 0px;
+  border-radius:10px ;
 }
 
-.btn-delete{
-    color:rgb(110, 3, 3);
-    border-radius: 5px;
-    padding: 2px 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    border:1px solid rgb(110, 3, 3);
-    background-color: transparent;
-    margin:5px 0px;
+.btn-add:hover {
+    box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(0.5px);
 }
 
-.btn-delete:hover{
-    color:$color-grey;
-    background-color: rgba(110, 3, 3, 0.486);
+.btn-delete {
+  color: rgb(182, 25, 25);
+  border-radius: 10px;
+  padding: 2px 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  border: 1.5px solid rgb(179, 25, 25);
+  background-color: transparent;
+  margin: 5px 0px;
 }
 
-.btn-save:active, .btn-add:active, .btn-delete:active {
-    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(2px)
+.btn-delete:hover {
+  color: $color-grey;
+  background-color: rgba(179, 25, 25, 0.719);
+  box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.25);
+  transform: translateY(0.5px);
+
+}
+
+.btn-save:active,
+.btn-add:active,
+.btn-delete:active {
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+  transform: translateY(0.5px);
+}
+
+.input-table {
+  background-color: $color-grey;
 }

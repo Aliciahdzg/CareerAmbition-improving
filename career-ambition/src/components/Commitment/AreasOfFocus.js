@@ -21,7 +21,7 @@ export default function AreasOfFocus({info, category, deleteRow, handleCategory,
                         </tr>)}
                     )): null}
                     <tr>
-                        <td><input type='text' onChange={(e) => handleCategory(e.target.value)} value={category}/></td>
+                        <td><input type='text' className='input-table' onChange={(e) => handleCategory(e.target.value)} value={category}/></td>
                         <td><button className='btn-add' type='button' onClick={()=>{addRowsCategory(category)}}>Add</button></td>
                     </tr>
                 </tbody>

@@ -55,7 +55,7 @@ const Aside = () => {
                     </div>
                     <div className="divHover">
                     <Icon icon="ic:outline-dashboard-customize" className="dashboard"
-                    onClick={dashboard}/>
+                    onClick={dashboard}/> 
                     <p>Dashboard</p>
                     </div>
                     <div className="divHover">
