@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import './login.scss'
+import { useNavigate } from "react-router";
+
+import { auth} from "../../firebase/firebase-config";
+
 import { FormLogin } from "./FormLogin";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router";
-import { auth} from "../../firebase/firebase-config"
+
+import './login.scss'
 
 
 export default function Login() {

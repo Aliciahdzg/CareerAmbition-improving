@@ -18,15 +18,15 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setCurrentUser(auth.currentUser)
-        console.log(auth.currentUser)
+        setCurrentUser(user)
+        console.log(user)
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
       }
     });
-  }, []);
-  console.log(isLoggedIn)
+ }, []);
+  console.log(isLoggedIn) 
 
 
   return (
