@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth ,signOut, setPersistence, browserSessionPersistence} from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
-import { doc, setDoc, deleteDoc } from "firebase/firestore";
+import { doc, setDoc, deleteDoc, getDocs, collection } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -39,3 +39,16 @@ export const deleteDesiredDoc = (idDoc) => {
   return deleteDoc(doc(db, "careerAmbitions", idDoc));
 }
 
+export const getDocsPeriods = async (idUser) => {
+  const querySnapshot = await getDocs(collection(db, "careerAmbitions"));
+  if (querySnapshot.length !== 0){
+    let docsData = []
+    querySnapshot.forEach((doc) =>  {
+      if (idUser === doc.data().useruid){
+        docsData.push(doc.data())
+      }
+    });
+    return docsData
+  }
+  return []
+}

@@ -11,7 +11,7 @@ import MainGoals from './MainGoals';
 import './dashboard.scss';
 
 
-const Dashboard = ({ currentUser }) => {
+const Dashboard = ({ currentUser, handleTextCareer, handleInfoBtn }) => {
     const  { uid }  = currentUser;
 
     const [user, setUser] = useState({});
@@ -84,7 +84,7 @@ const Dashboard = ({ currentUser }) => {
                               <textarea
                                   ref={inputRef}
                                   value={careerAmbition}
-                                  onChange={(e) => setCareerAmbition(e.target.value)} 
+                                  onChange={(e) => {setCareerAmbition(e.target.value); handleTextCareer(e.target.value)}} 
                               />
                                <button className="createCareer" type="button" onClick={() => handleCareerAmbition()} >
                                   <Icon icon="akar-icons:check-box-fill" color="#03588c" height="40" />
@@ -101,9 +101,7 @@ const Dashboard = ({ currentUser }) => {
                         <h3>Current SMART Goal</h3>
                         <p></p>
                     </div>
-                    {info.map((elem) => (
-                        <MainGoals elem={elem} key={elem.id} />
-                    ))}
+                        <MainGoals info={info} handleInfoBtn={handleInfoBtn} />
                     
                 </div>
             </div>

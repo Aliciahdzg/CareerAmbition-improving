@@ -8,7 +8,7 @@ import Accountability from './Accountability';
 import DeliberatePractice from './DeliberatePractice';
 import { addNewDoc } from '../../firebase/firebase-config';
 
-export default function Commitments({ currentUser }) {
+export default function Commitments({ currentUser, textCareer, infoBtn }) {
     let [info, setInfo] = useState({
         careerAmbition: '',
         year: new Date().getFullYear(),
@@ -202,7 +202,7 @@ export default function Commitments({ currentUser }) {
                 </div>
                 <div className='div-ambition'>
                     <label htmlFor='careerAmbition' className='label-commitments-ambition'>My Career Ambition is: </label>
-                    <input type='text' onChange={(e) => handleCareerAmbition(e.target.value)} value={info.careerAmbition} />
+                    <input type='text'  defaultValue={textCareer + infoBtn.period + infoBtn.year} disabled/>
                 </div>
                 <div className='div-goal'>
                     <label htmlFor='mainGoal' className='label-commitments-goal'>My main goal is: </label>
