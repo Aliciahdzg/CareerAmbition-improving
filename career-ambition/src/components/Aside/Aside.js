@@ -49,16 +49,25 @@ const Aside = () => {
         <div>
                 <aside className="aside">
                     <div className="icons">
+                        <div className="userAvatar">
                     <Icon icon="carbon:user-avatar" className="avatar" />
+                    {/* <Icon icon="akar-icons:circle-plus-fill" color="#5ebfa4" width="30" height="30" /> */}
+                    </div>
+                    <div className="divHover">
                     <Icon icon="ic:outline-dashboard-customize" className="dashboard"
-                    onClick={dashboard}/>
+                    onClick={dashboard}/> 
                     <p>Dashboard</p>
+                    </div>
+                    <div className="divHover">
                     <Icon icon="bx:bxs-calendar" className="calendar"
                     onClick={calendar}/>
                     <p>Calendar</p>
+                    </div>
+                    <div className="divHover">
                     <Icon icon="bi:list-check" className="edit"
                     onClick={editionView} />
                     <p>Commitments</p>
+                    </div>
                     </div>
                     <div className="logout">
                     <Icon icon="fe:logout"  onClick={() => { handleSignOut(auth) }}/>

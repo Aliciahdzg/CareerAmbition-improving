@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+$color-grey: #f2f2f2;
+$color-darkblue: #03588c;
+$color-lightblue: #035aa6;
+$color-green: #5ebfa4;
+
+
+.title-calendar{
+align-items: center;
+justify-content: center;
+align-content: center;
+font-family: "Open Sans", sans-serif;
+width: 70%;
+margin-left:50%;
+color: $color-lightblue;
+}
+
 .events {
   background-color: pink;
 }
@@ -8,7 +25,10 @@
   align-items: center;
   justify-content: center;
   align-content: center;
-  margin-left: 10vw;
+  width: 70%;
+  margin-left:20%;
+  font-family: "Open Sans", sans-serif;
+  
 }
 .notes-month {
   background-color: pink;
@@ -20,4 +40,5 @@
   align-items: center;
   align-content: center;
   font-size: 1.5em;
+
 }
