@@ -1,8 +1,8 @@
 
 .profile {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 
 }
 .btn-delete-photo{
@@ -29,4 +29,7 @@
     background-color:#5EBFA4;
     cursor: pointer;
     font-size: small;
+  }
+  .circle:active{
+    display: none;
   }
