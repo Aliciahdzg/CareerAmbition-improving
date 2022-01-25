@@ -11,7 +11,7 @@ import MainGoals from './MainGoals';
 import './dashboard.scss';
 
 
-const Dashboard = ({ currentUser, handleTextCareer, handleInfoBtn }) => {
+const Dashboard = ({ currentUser, handleTextCareer, handleInfoBtn}) => {
     const  { uid }  = currentUser;
 
     const [user, setUser] = useState({});
@@ -72,7 +72,7 @@ const Dashboard = ({ currentUser, handleTextCareer, handleInfoBtn }) => {
 
     return (
         <>
-            <Aside />
+            <Aside handleInfoBtn={handleInfoBtn}/>
             <div className='container-dashboard'>
                 <h3>{user.name}</h3>
                 <h4>{user.email}</h4>
@@ -101,7 +101,7 @@ const Dashboard = ({ currentUser, handleTextCareer, handleInfoBtn }) => {
                         <h3>Current SMART Goal</h3>
                         <p></p>
                     </div>
-                        <MainGoals info={info} handleInfoBtn={handleInfoBtn} />
+                        <MainGoals info={info} handleInfoBtn={handleInfoBtn}/>
                     
                 </div>
             </div>

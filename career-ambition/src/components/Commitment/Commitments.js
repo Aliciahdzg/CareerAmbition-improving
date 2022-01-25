@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './scss/commitments.scss'
 import ActionPlan from './ActionPlan'
 import Aside from '../Aside/Aside';
@@ -6,12 +6,16 @@ import AreasOfFocus from './AreasOfFocus';
 import PlannedPractices from './PlannedPractices';
 import Accountability from './Accountability';
 import DeliberatePractice from './DeliberatePractice';
-import { addNewDoc } from '../../firebase/firebase-config';
+import { addNewDoc, getDocsPeriods, getDocCareerAmbition } from '../../firebase/firebase-config';
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
-export default function Commitments({ currentUser, textCareer, infoBtn }) {
+export default function Commitments({ currentUser, textCareer, infoBtn, handleInfoBtn }) {
+    const navigate = useNavigate();
+    const navToDashboard = () => {
+        navigate("/dashboard")
+      }
     let [info, setInfo] = useState({
-        careerAmbition: '',
         year: new Date().getFullYear(),
         useruid: currentUser.uid,
         period: '',
@@ -23,6 +27,7 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
         deliberatePractice: []
     })
 
+
     let [smartGoal, setSmartGoal] = useState('')
     let [dateSmartGoal, setDateSmartGoal] = useState('')
 
@@ -32,9 +37,11 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
             setSmartGoal('')
             setDateSmartGoal('')
         } else {
-            Swal.fire({title: 'Please, fill at least the SMART Goal',
-            icon: "warning",
-            confirmButtonColor: "#5EBFA4",});
+            Swal.fire({
+                title: 'Please, fill at least the SMART Goal',
+                icon: "warning",
+                confirmButtonColor: "#5EBFA4",
+            });
             //alert('Please, fill at least the SMART Goal')
         }
     }
@@ -54,9 +61,11 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
             setInfo({ ...info, areasOfFocus: [...info.areasOfFocus, categ] })
             setCategory('')
         } else {
-            Swal.fire({title: 'Please, fill all the blank spaces',
-            icon: "warning",
-            confirmButtonColor: "#5EBFA4",});
+            Swal.fire({
+                title: 'Please, fill all the blank spaces',
+                icon: "warning",
+                confirmButtonColor: "#5EBFA4",
+            });
             //alert('Please, fill all the blank spaces')
         }
     }
@@ -74,10 +83,12 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
             setAction('')
             setFrecuency('')
         } else {
-            Swal.fire({title: 'Please, fill all the blank spaces',
-            icon: "warning",
-            confirmButtonColor: "#5EBFA4",});
-            
+            Swal.fire({
+                title: 'Please, fill all the blank spaces',
+                icon: "warning",
+                confirmButtonColor: "#5EBFA4",
+            });
+
             //alert('Please, fill all the blank spaces')
         }
     }
@@ -101,9 +112,11 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
             setWhen('')
             setVia('')
         } else {
-            Swal.fire({title: 'Please, fill all the name of your mentor',
-            icon: "warning",
-            confirmButtonColor: "#5EBFA4",});
+            Swal.fire({
+                title: 'Please, fill all the name of your mentor',
+                icon: "warning",
+                confirmButtonColor: "#5EBFA4",
+            });
             //alert('Please, fill the name of your mentor')
         }
     }
@@ -131,9 +144,11 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
             setDate('')
             setOutcomes('')
         } else {
-            Swal.fire({title: 'Please, fill all the blank spaces',
-            icon: "warning",
-            confirmButtonColor: "#5EBFA4",});
+            Swal.fire({
+                title: 'Please, fill all the blank spaces',
+                icon: "warning",
+                confirmButtonColor: "#5EBFA4",
+            });
 
             //alert('Please, fill all the blank spaces')
         }
@@ -164,28 +179,80 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
     }
 
     const handlePeriod = (periods) => {
-        setInfo({ ...info, period: periods })
+        let arrFiltered = []
+        getDocsPeriods(currentUser.uid)
+            .then((res) => {
+                if (res.length !== 0) {
+                    res.forEach((elem) => {
+                        if (elem.period === periods && elem.year === new Date().getFullYear()) {
+                            arrFiltered.push(elem)
+                        }
+                    })
+                    if (arrFiltered[0] === undefined){
+                        setInfo({
+                            year: new Date().getFullYear(),
+                            useruid: currentUser.uid,
+                            period: periods,
+                            mainGoal: '',
+                            areasOfFocus: [],
+                            actionPlans: [],
+                            plannedPractices: [],
+                            accountability: [],
+                            deliberatePractice: []
+                        })
+                    } else {
+                        setInfo(arrFiltered[0])
+                    }
+                } else {
+                    setInfo({ ...info, period: periods })
+                }
+            })
+            .catch((error) => {
+                throw error;
+            });
     }
 
+   
+    useEffect(() => {
+        if (infoBtn.period !== ''){
+            handlePeriod(infoBtn.period)
+        } else {
+            setInfo({
+                year: new Date().getFullYear(),
+                useruid: currentUser.uid,
+                period: '',
+                mainGoal: '',
+                areasOfFocus: [],
+                actionPlans: [],
+                plannedPractices: [],
+                accountability: [],
+                deliberatePractice: []
+            })
+        }
+        getDocCareerAmbition(currentUser.uid).then((res)=>{
+            if (res.length !==0){
+                console.log(res[0])
+                handleCareerAmbitionText(res[0].careerAmbition)
+            } else {
+                handleCareerAmbitionText('')
+            }
+        })
+    },[]);
 
     const handleMainGoal = (maingoals) => {
         setInfo({ ...info, mainGoal: maingoals })
     }
 
-    const handleCareerAmbition = (careerAmbitions) => {
-        setInfo({ ...info, careerAmbition: careerAmbitions })
+    const [careerAmbition, setCareerAmbition] = useState('')
+    const handleCareerAmbitionText = (newAmbition) => {
+        setCareerAmbition(newAmbition)
     }
-
 
     const saveData = () => {
         if (info.period !== '') {
-            console.log(currentUser.uid)
-            console.log(info)
-
             addNewDoc(currentUser.uid, info.period, info.year, info)
                 .then(() => {
                     setInfo({
-                        careerAmbition:'',
                         year: new Date().getFullYear(),
                         useruid: currentUser.uid,
                         period: '',
@@ -202,30 +269,39 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
                 });
         } else {
 
-            Swal.fire({title: 'Please, select a period',
-            icon: "warning",
-            confirmButtonColor: "#5EBFA4",});
+            Swal.fire({
+                title: 'Please, select a period',
+                icon: "warning",
+                confirmButtonColor: "#5EBFA4",
+            });
 
             //alert('Please, select a period')
         }
     }
     return (
         <div className='body-commitments'>
-            <Aside />
+            <Aside handleInfoBtn={handleInfoBtn}/>
             <div className='container-commitments'>
                 <div className='div-period'>
                     <h1 className='h1-commitments'>Period</h1>
-                    <select name="frecuency" className='period-select' onChange={(e) => handlePeriod(e.target.value)} value={info.period}>
+                    {infoBtn.mode !== '' ? (<select name="frecuency" className='period-select' onChange={(e) => handlePeriod(e.target.value)} value={info.period} disabled>
                         <option value="" disabled>Q-</option>
                         <option value="Q1">Q1</option>
                         <option value="Q2">Q2</option>
                         <option value="Q3">Q3</option>
                         <option value="Q4">Q4</option>
-                    </select>
+                    </select>): (<select name="frecuency" className='period-select' onChange={(e) => handlePeriod(e.target.value)} value={info.period}>
+                        <option value="" disabled>Q-</option>
+                        <option value="Q1">Q1</option>
+                        <option value="Q2">Q2</option>
+                        <option value="Q3">Q3</option>
+                        <option value="Q4">Q4</option>
+                    </select>)
+                    }
                 </div>
                 <div className='div-ambition'>
                     <label htmlFor='careerAmbition' className='label-commitments-ambition'>My Career Ambition is: </label>
-                    <input type='text'  defaultValue={textCareer + infoBtn.period + infoBtn.year} disabled/>
+                    <input type='text' defaultValue={careerAmbition} disabled />
                 </div>
                 <div className='div-goal'>
                     <label htmlFor='mainGoal' className='label-commitments-goal'>My main goal is: </label>
@@ -236,9 +312,9 @@ export default function Commitments({ currentUser, textCareer, infoBtn }) {
                 <PlannedPractices info={info} action={action} frecuency={frecuency} addRowsAction={addRowsAction} handleActions={handleActions} handleFrecuency={handleFrecuency} deleteRow={deleteRow} />
                 <Accountability info={info} mentor={mentor} when={when} via={via} addRowsMentor={addRowsMentor} handleMentor={handleMentor} handleWhen={handleWhen} handleVia={handleVia} deleteRow={deleteRow} />
                 <DeliberatePractice info={info} practice={practice} date={date} outcomes={outcomes} addRowsPractice={addRowsPractice} handlePractice={handlePractice} handleDate={handleDate} handleOutcomes={handleOutcomes} deleteRow={deleteRow} />
-                <div className='div-btn-save'>
-                    <button className='btn-save' type='button' onClick={() => { saveData() }}>Save</button>
-                </div>
+                { infoBtn.mode === 'view' ? null: <div className='div-btn-save'>
+                    <button className='btn-save' type='button' onClick={() => { saveData(); handleInfoBtn('', '', ''); navToDashboard() }}>Save</button>
+                </div>}
             </div>
         </div>
     )

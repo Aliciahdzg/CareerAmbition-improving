@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import Photo from './Photo';
 
-const Aside = () => {
+const Aside = ({handleInfoBtn}) => {
 
   const [setError] = useState("");
   const navigate = useNavigate();
@@ -56,17 +56,17 @@ const Aside = () => {
                         </div>
                     <div className="divHover">
                     <Icon icon="ic:outline-dashboard-customize" className="dashboard"
-                    onClick={dashboard}/> 
+                    onClick={() => {dashboard() ; handleInfoBtn('', '', '')}}/> 
                     <p>Dashboard</p>
                     </div>
                     <div className="divHover">
                     <Icon icon="bx:bxs-calendar" className="calendar"
-                    onClick={calendar}/>
+                    onClick={() => {calendar() ; handleInfoBtn('', '', '')}}/>
                     <p>Calendar</p>
                     </div>
                     <div className="divHover">
                     <Icon icon="bi:list-check" className="edit"
-                    onClick={editionView} />
+                    onClick={() => {editionView() ; handleInfoBtn('', '', '')}} />
                     <p>Commitments</p>
                     </div>
                     </div>
