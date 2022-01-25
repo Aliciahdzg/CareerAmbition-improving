@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { signOff, auth } from "../../firebase/firebase-config";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import Photo from './Photo';
 
 const Aside = ({handleInfoBtn}) => {
 
@@ -50,9 +51,9 @@ const Aside = ({handleInfoBtn}) => {
                 <aside className="aside">
                     <div className="icons">
                         <div className="userAvatar">
-                    <Icon icon="carbon:user-avatar" className="avatar" />
-                    {/* <Icon icon="akar-icons:circle-plus-fill" color="#5ebfa4" width="30" height="30" /> */}
-                    </div>
+                          {/*<Icon icon="carbon:user-avatar" className="avatar" />*/}
+                             <Photo/>
+                        </div>
                     <div className="divHover">
                     <Icon icon="ic:outline-dashboard-customize" className="dashboard"
                     onClick={() => {dashboard() ; handleInfoBtn('', '', '')}}/> 

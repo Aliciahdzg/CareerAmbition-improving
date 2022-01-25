@@ -11,46 +11,52 @@ p {
   font-size: 10px;
 }
 
-.aside{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 169px;
-    left: 0px;
-    top: 0px;
-    background: #434546;
-    height: 100%;
-    font-size: 4em;
-    flex-direction: column;
-    border-right-style: solid;
-    border-right-color: #5EBFA4;
-    box-shadow: 0px 20px blue;
+.aside {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 169px;
+  left: 0px;
+  top: 0px;
+  background: #434546;
+  height: 100%;
+  font-size: 4em;
+  flex-direction: column;
+  border-right-style: solid;
+  border-right-color: #5ebfa4;
+  box-shadow: 0px 20px blue;
 }
-.userAvatar{
-    display: flex;
-}
-
-.icons{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    margin: 5px;
-    cursor: pointer;
+.userAvatar {
+  display: flex;
+  //margin-top: 5px;
+  //margin-right: 25px;
+  //justify-content: center;
+  //width: 50px;
 }
 
-.logout, .calendar, .edit{
-    margin-top: 20px;
-  
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
 }
-.divHover:hover, .logout:hover{
-    color: #5EBFA4;
+
+.logout,
+.calendar,
+.edit {
+  margin-top: 20px;
 }
-.avatar{
-    margin-bottom: 40px;
-    font-size: 1.5em;
+.divHover:hover,
+.logout:hover {
+  color: #5ebfa4;
+}
+.avatar {
+  margin-bottom: 40px;
+  font-size: 1.5em;
 }
 .logout {
   display: flex;
@@ -84,16 +90,17 @@ p {
 .edit:active {
   color: $color-green;
 }
-.divHover{
-    text-align: center;
+.divHover {
+  text-align: center;
 }
 
-.logout{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin-bottom:17px;
+.logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 17px;
 }
+
 
