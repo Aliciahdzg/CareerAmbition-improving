@@ -22,14 +22,12 @@ function App() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser(user)
-        console.log(user)
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
       }
     });
  }, []);
-  console.log(isLoggedIn) 
 
   let [textCareer, setTextCareer] = useState('');
   const handleTextCareer = (newText) => {
