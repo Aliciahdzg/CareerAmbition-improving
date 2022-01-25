@@ -16,7 +16,7 @@ The improver will be able to introduce his email and password to get access to t
 <img width="500" src="https://i.ibb.co/SQjzDT3/login.png">
 
 ### 2. Aside
-In this section the improver will be able to put a profile picture, and will see a menu of the different views that they can access, as well as a button to be able to close their session.
+In this section the improver will be able to put a profile picture, and will see a menu of the different views that they can access, as well as a button to be able to close their session. 
 
 ### 3. Dashboard
 In this view, the improver can see the "Career Ambition" section where he'll be able to edit it directly from there. Also, he can see his Main Goal.
