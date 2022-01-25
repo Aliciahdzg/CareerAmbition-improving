@@ -32,5 +32,7 @@ If the improver chooses to edit the existing information, the info will appear p
 In this view, the improver will be able to see a big calendar where the tasks that have already been scheduled, will be shown on the corresponding date. </br></br>
 <img width="500" src="https://i.ibb.co/j6ph6nP/calendar.png">
 
-### 6. Prototype </br>
-[Prototipo en Figma](https://www.figma.com/file/3DpWSbAB9s8q8aAtORRJGm/Codeven?node-id=176%3A2)
+### 6. Prototype and Deployd
+[Figma prototype](https://www.figma.com/file/3DpWSbAB9s8q8aAtORRJGm/Codeven?node-id=176%3A2) </br>
+[Deployed page](https://improving-tf.web.app/)
+
