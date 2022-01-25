@@ -21,7 +21,7 @@ export default function DeliberatePractice({info, practice, date, outcomes, dele
                             <td>{elem.action}</td>
                             <td>{elem.date}</td>
                             <td>{elem.outcomes}</td>
-                            <td ><button className='btn-delete' type='button' key={keyBtnPractice} onClick={()=> deleteRow(keyBtnPractice, 'deliberatePractice')}>X</button></td>
+                            <td ><button className='btn-delete' type='button' key={keyBtnPractice} onClick={()=> deleteRow(keyBtnPractice, 'deliberatePractice')}>Delete</button></td>
                         </tr>)}
                     )): null}
                     <tr>

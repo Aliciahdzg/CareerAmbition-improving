@@ -1,6 +1,7 @@
 import React,{ useEffect, useState}from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from './firebase/firebase-config';
 
@@ -14,6 +15,8 @@ import './App.css';
 function App() {
   const [isLoggedIn, setIsLoggedIn]= useState(false)
   const [currentUser, setCurrentUser] =useState('')
+
+  
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -34,22 +37,25 @@ function App() {
   }
   let [infoBtn, setInfoBtn] = useState({
     period: '',
-    year:''
+    year:'',
+    mode:''
   })
-  const handleInfoBtn = (periods, years) => {
+  const handleInfoBtn = (periods, years, modes) => {
     setInfoBtn({
       period: periods,
-      year: years
+      year: years,
+      mode: modes
     })
   }
 
+  
 
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route exact path="dashboard" element={<Dashboard currentUser={currentUser} handleTextCareer={handleTextCareer} handleInfoBtn={handleInfoBtn} />} />
-        <Route exact path="commitment" element={<Commitments currentUser={currentUser} textCareer={textCareer} infoBtn={infoBtn} />} />
+        <Route exact path="dashboard" element={<Dashboard currentUser={currentUser} handleTextCareer={handleTextCareer} handleInfoBtn={handleInfoBtn}/>} />
+        <Route exact path="commitment" element={<Commitments currentUser={currentUser} textCareer={textCareer} infoBtn={infoBtn} handleInfoBtn={handleInfoBtn}/>} />
         <Route exact path="calendar" element={<CalendarView />} />
       </Routes>
     </BrowserRouter>

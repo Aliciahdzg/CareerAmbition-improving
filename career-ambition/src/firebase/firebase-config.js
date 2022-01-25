@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth ,signOut, setPersistence, browserSessionPersistence} from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
-import { doc, setDoc, deleteDoc, getDocs, collection } from "firebase/firestore";
+import { doc, setDoc, deleteDoc, getDocs, collection,getDoc } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -35,8 +35,9 @@ export const addNewDoc = (idUser, period, year, data) => {
   return setDoc(doc(db, "careerAmbitions", id), data);
 }
 
-export const deleteDesiredDoc = (idDoc) => {
-  return deleteDoc(doc(db, "careerAmbitions", idDoc));
+export const deleteDesiredDoc = (idUser, period, year) => {
+  let id = idUser + period + year;
+  return deleteDoc(doc(db, "careerAmbitions", id));
 }
 
 export const getDocsPeriods = async (idUser) => {
@@ -49,6 +50,15 @@ export const getDocsPeriods = async (idUser) => {
       }
     });
     return docsData
+  }
+  return []
+}
+
+export const getDocCareerAmbition = async (idUser) => {
+  const docRef = doc(db, "textCareerAmbition",idUser);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.length !== 0){
+    return docSnap
   }
   return []
 }

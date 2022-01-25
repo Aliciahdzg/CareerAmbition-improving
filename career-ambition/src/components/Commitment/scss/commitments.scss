@@ -41,7 +41,7 @@ body::-webkit-scrollbar {
 }
 
 .table-commitments tr {
-  border: 2px solid #03578c00;
+  border: 1px solid #03578c;
 }
 
 .table-commitments td {
@@ -72,6 +72,7 @@ body::-webkit-scrollbar {
 .h1-commitments {
   color: $color-darkblue;
   font-family: "Open Sans", sans-serif;
+  margin-bottom: 0px;
 }
 
 .title-commitments {
@@ -119,6 +120,7 @@ body::-webkit-scrollbar {
   font-size: 18px;
   border: none;
   margin: 10px auto;
+  cursor: pointer;
 }
 
 .btn-save:hover {
@@ -135,6 +137,7 @@ body::-webkit-scrollbar {
   font-size: 12px;
   border: none;
   margin: 5px 0px;
+  cursor: pointer;
 }
 
 .btn-add:hover {
@@ -150,6 +153,7 @@ body::-webkit-scrollbar {
   border: 1px solid rgb(110, 3, 3);
   background-color: transparent;
   margin: 5px 0px;
+  cursor: pointer;
 }
 
 .btn-delete:hover {
@@ -176,12 +180,10 @@ body::-webkit-scrollbar {
   background:transparent;
   border: none;
   border-radius: 10px;
-  font-size: 24px;
-  height: 30px;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: $color-darkblue;
-  margin-left: 1vw;
+  height: fit-content;
+  font-size: 26px;
+  color:$color-darkblue;
+  margin:0px 20px;
 }
 
 .div-ambition,
