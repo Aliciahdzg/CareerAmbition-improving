@@ -8,12 +8,11 @@ const Photo = () => {
   return ( 
     <div>
     {selectedImage && (
-      <div className="img-profile">
       <img alt="not fount" className="profile" src={URL.createObjectURL(selectedImage)} />
+    )}
+
       <label for="fichero" className="circle">Add photo</label>
       <input type="file" id="fichero" onChange={(event) => {setSelectedImage(event.target.files[0]); }}/>
-      </div>
-    )}
   </div>
   );
 };
