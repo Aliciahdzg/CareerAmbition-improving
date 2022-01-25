@@ -3,10 +3,10 @@ import './Calendar.scss'
 import { Calendar } from 'antd';
 import {monthCellRender} from './Algo'
 import Aside from "../Aside/Aside";
-const CalendarView = () =>{
+const CalendarView = ({handleInfoBtn}) =>{
     return(
         <div>
-            <Aside />
+            <Aside handleInfoBtn={handleInfoBtn}/>
             <h1 className='title-calendar'>CALENDAR</h1>
             <Calendar  monthCellRender={monthCellRender} className="cal"/>
         </div>
