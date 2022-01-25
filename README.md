@@ -12,7 +12,7 @@ Web aplication that allows you as Improver to have a friendly and orderly space 
 
 
 ### 1. Login
-The improver will be able to introduce his email and password to get access to the app. In this form there are some validations and so only the improver can have access to the platform.
+The improver will be able to introduce his email and password to get access to the app. In this form there are some validations and so only the improver can have access to the platform. </br>
 <img width="500" src="https://i.ibb.co/SQjzDT3/login.png">
 
 ### 2. Aside
