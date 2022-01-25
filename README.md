@@ -10,6 +10,8 @@ Web aplication that allows you as Improver to have a friendly and orderly space 
 * [5. Calendar](#5-calendar)
 * [6. Prototype](#6-prototype)
 
+<img width="800" alt="presentaciónGit" src="https://user-images.githubusercontent.com/50429563/145638444-9cfbf264-92a3-473c-8d76-3c43f02ec40d.png">
+
 ### 1. Login
 The improver will be able to introduce his email and password to get access to the app. In this form there are some validations and so only the improver can have access to the platform.
 <img src=“https://i.ibb.co/SQjzDT3/login.png” alt=“login” border=“0">
