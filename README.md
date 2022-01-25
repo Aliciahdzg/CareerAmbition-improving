@@ -4,35 +4,24 @@ Web aplication that allows you as Improver to have a friendly and orderly space 
 ## Views
 
 * [1. Login](#1-login)
-* [2. Dashboard](#2-dashboard)
-* [3. Commitments](#3-commitments)
-* [4. Calendar](#4-calendar)
+* [2. Aside](#2-aside)
+* [3. Dashboard](#3-dashboard)
+* [4. Commitments](#4-commitments)
+* [5. Calendar](#5-calendar)
 
 ### 1. Login
+The improver will be able to introduce his email and password to get access to the app. In this form there are some validations and so only the improver can have access to the platform.
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
+### 2. Aside
+In this section the improver will be able to put a profile picture, and will see a menu of the different views that they can access, as well as a button to be able to close their session.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+### 3. Dashboard
+In this view, the improver can see the "Career Ambition" section where he'll be able to edit it directly from there. Also, he can see his Main Goal.
+On the bottom, there's a table where the improver can visualize the periods who have set, a progress bar that shows the tasks completed and the status of that progress; in addition, there are three buttons for view, editing, and removing the info.
 
-## 2. Resumen del proyecto
+### 4. Commitments
+In the commitments view, the improver can select the period of his election; can add, edit and remove information according to the different sections to fill.   
+If the improver chooses to edit the existing information, the info will appear previously in the tables directly from the database. 
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
-[Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
-
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
-acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
-
-El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página)
-en la que podamos **leer y escribir datos**.
+### 5. Calendar
+In this view, the improver will be able to see a big calendar where the tasks that have already been scheduled, will be shown on the corresponding date. 
