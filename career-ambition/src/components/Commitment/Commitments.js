@@ -232,11 +232,13 @@ export default function Commitments({ currentUser, textCareer, infoBtn, handleIn
         getDocCareerAmbition(currentUser.uid).then((res)=>{
             if (res.length !==0){
                 console.log(res[0])
-                handleCareerAmbitionText(res[0].careerAmbition)
+                handleCareerAmbitionText(res[0].textCareerAmbition)
             } else {
                 handleCareerAmbitionText('')
             }
-        })
+        }).catch((error) => {
+            throw error;
+        });
     },[]);
 
     const handleMainGoal = (maingoals) => {
