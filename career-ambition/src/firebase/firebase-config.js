@@ -35,9 +35,8 @@ export const addNewDoc = (idUser, period, year, data) => {
   return setDoc(doc(db, "careerAmbitions", id), data);
 }
 
-export const deleteDesiredDoc = (idUser, period, year) => {
-  let id = idUser + period + year;
-  return deleteDoc(doc(db, "careerAmbitions", id));
+export const deleteDesiredDoc = (idDoc) => {
+  return deleteDoc(doc(db, "careerAmbitions", idDoc));
 }
 
 export const getDocsPeriods = async (idUser) => {

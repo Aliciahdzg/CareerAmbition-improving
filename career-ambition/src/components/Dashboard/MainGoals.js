@@ -29,7 +29,7 @@ const MainGoals = ({infos, handleInfoBtn}) => {
              <Icon icon="mdi-light:pencil" color="#03588c" height="20" />
             </button>
             <button onClick={() => deleteDesiredDoc(elem.id)} >
-                <Icon icon="ic:twotone-delete-forever" color="#03588C" height="25" />
+                <Icon icon="ic:twotone-delete-forever" color="#03588c" height="25" />
             </button>
         </td>
     </tr>
