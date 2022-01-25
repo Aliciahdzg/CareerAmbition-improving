@@ -68,3 +68,8 @@ export const getDocCareerAmbition = async (idUser) => {
   }
   return []
 }
+
+export const addNewDocCA = (idUser, year, data) => {
+  let id = idUser + year;
+  return setDoc(doc(db, "textCareerAmbition", id), data);
+}
