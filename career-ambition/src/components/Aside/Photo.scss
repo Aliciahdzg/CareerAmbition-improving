@@ -1,0 +1,32 @@
+
+.profile {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+
+}
+.btn-delete-photo{
+    margin-left: 120px;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(192, 41, 41);
+    color:rgb(255, 255, 255);
+    padding: 3px;
+}
+
+#fichero{
+    display: none;
+}
+
+.circle{
+    //display: inline-block;
+    border-radius: 15px;
+    padding: 5px;
+    width: fit-content;
+    background-color:#5EBFA4;
+    cursor: pointer;
+    font-size: small;
+  }
