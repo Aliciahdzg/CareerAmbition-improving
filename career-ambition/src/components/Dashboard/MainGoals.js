@@ -8,14 +8,14 @@ import { Icon } from '@iconify/react';
 
 import './mainGoals.scss';
 
-const MainGoals = ({info, handleInfoBtn}) => {
+const MainGoals = ({infos, handleInfoBtn}) => {
   const navigate = useNavigate();
   const navToCommitment = () => {
     navigate("/commitment")
   }
 
   const list = [];
-  info.forEach((elem) => {
+  infos.forEach((elem) => {
       list.push(
       <tr>
         <td>{elem.period + elem.year }</td>

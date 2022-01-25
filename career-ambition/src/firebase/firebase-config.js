@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth ,signOut, setPersistence, browserSessionPersistence} from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
-import { doc, setDoc, deleteDoc, getDocs, collection,getDoc } from "firebase/firestore";
+import { doc, setDoc, deleteDoc, getDocs, collection } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -55,10 +55,21 @@ export const getDocsPeriods = async (idUser) => {
 }
 
 export const getDocCareerAmbition = async (idUser) => {
-  const docRef = doc(db, "textCareerAmbition",idUser);
-  const docSnap = await getDoc(docRef);
-  if (docSnap.length !== 0){
-    return docSnap
+  const querySnapshot = await getDocs(collection(db, "textCareerAmbition"));
+  if (querySnapshot.length !== 0){
+    let docsData = []
+    let idDoc = idUser + new Date().getFullYear()
+    querySnapshot.forEach((doc) =>  {
+      if (doc.id === idDoc){
+        docsData.push(doc.data())
+      }
+    });
+    return docsData
   }
   return []
+}
+
+export const addNewDocCA = (idUser, year, data) => {
+  let id = idUser + year;
+  return setDoc(doc(db, "textCareerAmbition", id), data);
 }

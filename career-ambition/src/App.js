@@ -56,7 +56,7 @@ function App() {
         <Route exact path="/" element={<Login />} />
         <Route exact path="dashboard" element={<Dashboard currentUser={currentUser} handleTextCareer={handleTextCareer} handleInfoBtn={handleInfoBtn}/>} />
         <Route exact path="commitment" element={<Commitments currentUser={currentUser} textCareer={textCareer} infoBtn={infoBtn} handleInfoBtn={handleInfoBtn}/>} />
-        <Route exact path="calendar" element={<CalendarView />} />
+        <Route exact path="calendar" element={<CalendarView infoBtn={infoBtn} handleInfoBtn={handleInfoBtn}/>} />
       </Routes>
     </BrowserRouter>
   );
