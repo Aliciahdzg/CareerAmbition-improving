@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { doc,query, getDoc, collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase/firebase-config';
 
+import { getDocCareerAmbition, addNewDocCA } from '../../firebase/firebase-config';
+
 import Aside from '../Aside/Aside';
 
 import { Icon } from '@iconify/react';
@@ -29,6 +31,23 @@ const Dashboard = ({ currentUser, handleTextCareer, handleInfoBtn }) => {
         }
         return getUser(uid);
     }, []);
+    
+    const handleCareerAmbitionText = (newAmbition) => {
+        setCareerAmbition(newAmbition)
+    }
+
+    useEffect(() => {
+        getDocCareerAmbition(currentUser.uid).then((res)=>{
+            if (res.length !==0){
+                console.log(res[0])
+                handleCareerAmbitionText(res[0].textCareerAmbition)
+            } else {
+                handleCareerAmbitionText('')
+            }
+        }).catch((error) => {
+            throw error;
+        });
+    },[]);
     
     useEffect(() => {
         const getMainGoals = async (uid) => {
@@ -84,7 +103,7 @@ const Dashboard = ({ currentUser, handleTextCareer, handleInfoBtn }) => {
                               <textarea
                                   ref={inputRef}
                                   value={careerAmbition}
-                                  onChange={(e) => {setCareerAmbition(e.target.value); handleTextCareer(e.target.value)}} 
+                                  onChange={(e) => {setCareerAmbition(e.target.value); handleCareerAmbitionText(uid)}} 
                               />
                                <button className="createCareer" type="button" onClick={() => handleCareerAmbition()} >
                                   <Icon icon="akar-icons:check-box-fill" color="#03588c" height="40" />

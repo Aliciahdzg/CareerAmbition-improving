@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { deleteDesiredDoc } from '../../firebase/firebase-config';
+
 import { Icon } from '@iconify/react';
 
 import './mainGoals.scss';
@@ -8,7 +10,7 @@ const MainGoals = ({info, handleInfoBtn}) => {
   const list = [];
   info.forEach((elem) => {
       list.push(
-      <tr>
+      <tr key={elem.id}>
         <td>{elem.period + elem.year }</td>
         <td>{elem.mainGoal}</td>
         <td>En proceso</td>
@@ -17,7 +19,10 @@ const MainGoals = ({info, handleInfoBtn}) => {
                 <Icon icon="icomoon-free:eye-plus" color="#03588c" height="20" />
             </button>
             <button onClick={() => handleInfoBtn(elem.period, elem.year)}>
-             <Icon icon="mdi-light:pencil" color="#03588c" height="20" />
+                <Icon icon="mdi-light:pencil" color="#03588c" height="20" />
+            </button>
+            <button onClick={() => deleteDesiredDoc(elem.id)} >
+                <Icon icon="ic:twotone-delete-forever" color="#03588c" height="25" />
             </button>
         </td>
     </tr>
@@ -28,10 +33,10 @@ const MainGoals = ({info, handleInfoBtn}) => {
   <table className='main-goals'>
       <thead>
          <tr>
-             <th>Period</th>
+             <th className='period'>Period</th>
              <th>Main Goal</th>
-             <th>Status</th>
-             <th>Action</th>
+             <th className='status'>Status</th>
+             <th className='action'>Action</th>
          </tr>
       </thead>
       <tbody>
